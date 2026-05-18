@@ -92,8 +92,8 @@ Instead of just removing items, I'd recommend commenting them out to more easily
 
 If you ever want to return to the default settings, just remove the config file and run the program to generate a new one.
 
+## Supported colors:
 ```txt
-Supported colors:
 
 - Black
 - Red
@@ -125,5 +125,3 @@ The following is a list of supported distros. Dfetch definitely works on many mo
 - Ubuntu
 - Linux Mint
 ```
-
-> Note: AI tools were used for small changes and file organization, but the project’s code was written by humans.
