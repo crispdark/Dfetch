@@ -1,8 +1,10 @@
 package main
 
 import (
+	"Dfetch/internal/assets"
 	"Dfetch/internal/config"
 	"Dfetch/internal/customization"
+	"Dfetch/internal/model"
 	"fmt"
 	"os"
 )
@@ -22,9 +24,14 @@ func main() {
 		}
 	}
 
-	sys := collectSystemInfo()
+	sys := model.CollectSystemInfo()
 
-	asciiLines, color := loadASCII(sys.ID, color, noColor)
+	asciiLines, color := assets.LoadASCII(
+		assets.LogoFS,
+		sys.ID,
+		color,
+		noColor,
+	)
 
 	color = customization.GetColorCode(color)
 

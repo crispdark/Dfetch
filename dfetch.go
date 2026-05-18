@@ -1,102 +1,12 @@
-// dfetch.go
 package main
 
 import (
-	"Dfetch/internal/getsysinfo"
-	"bufio"
-	"embed"
+	"Dfetch/internal/model"
 	"fmt"
 	"strings"
 )
 
-//go:embed logo/*
-var logoFS embed.FS
-
-type SystemInfo struct {
-	DistroName   string
-	ID           string
-	Kernel       string
-	CPU          string
-	Memory       string
-	Username     string
-	Hostname     string
-	LocalIP      string
-	IPVersion    string
-	Uptime       string
-	Battery      int
-	BatteryState string
-	DE           string
-	SessionType  string
-}
-
-func collectSystemInfo() SystemInfo {
-	DistroName, id := getsysinfo.Distro()
-	localIP, version := getsysinfo.LocalIP()
-	battery, batteryStatus := getsysinfo.Battery()
-
-	de, sessionType := getsysinfo.DesktopEnvironment()
-
-	return SystemInfo{
-		DistroName:   DistroName,
-		ID:           id,
-		Kernel:       getsysinfo.Kernel(),
-		CPU:          getsysinfo.Cpu(),
-		Memory:       getsysinfo.Mem(),
-		Username:     getsysinfo.Username(),
-		Hostname:     getsysinfo.Hostname(),
-		LocalIP:      localIP,
-		IPVersion:    version,
-		Uptime:       getsysinfo.Uptime(),
-		Battery:      battery,
-		BatteryState: batteryStatus,
-		DE:           de,
-		SessionType:  sessionType,
-	}
-}
-
-func loadASCII(distroID, color string, noColor bool) ([]string, string) {
-	file := fmt.Sprintf("logo/%s.txt", strings.ToLower(distroID))
-
-	f, err := logoFS.Open(file)
-	if err != nil {
-		f, err = logoFS.Open("logo/linux.txt")
-		if err != nil {
-			return []string{}, color
-		}
-	}
-
-	defer f.Close()
-
-	var lines []string
-
-	scanner := bufio.NewScanner(f)
-
-	for scanner.Scan() {
-		line := scanner.Text()
-
-		// Load color from ASCII file if no config color
-		if strings.HasPrefix(line, "color:") {
-			if color == "" {
-				color = strings.TrimSpace(strings.TrimPrefix(line, "color:"))
-			}
-			continue
-		}
-
-		lines = append(lines, line)
-	}
-
-	if err := scanner.Err(); err != nil {
-		return []string{}, color
-	}
-
-	if noColor {
-		color = ""
-	}
-
-	return lines, color
-}
-
-func buildInfoLines(sys SystemInfo, configLines []string) []string {
+func buildInfoLines(sys model.SystemInfo, configLines []string) []string {
 	userInfo := fmt.Sprintf("\x1b[1m%s@%s\x1b[0m", sys.Username, sys.Hostname)
 	separator := strings.Repeat("-", len(userInfo))
 

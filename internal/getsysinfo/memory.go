@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func Mem() string {
+func Memory() string {
 	file, err := os.Open("/proc/meminfo")
 	if err != nil {
 		return "unknown"
