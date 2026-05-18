@@ -1,10 +1,11 @@
 package main
 
 import (
-	"Dfetch/internal/assets"
-	"Dfetch/internal/config"
-	"Dfetch/internal/customization"
-	"Dfetch/internal/model"
+	"dfetch/internal/assets"
+	"dfetch/internal/config"
+	"dfetch/internal/customization"
+	"dfetch/internal/model"
+	"dfetch/internal/render"
 	"fmt"
 	"os"
 )
@@ -35,7 +36,7 @@ func main() {
 
 	color = customization.GetColorCode(color)
 
-	infoLines := buildInfoLines(sys, lines)
+	infoLines := render.BuildInfoLines(sys, lines)
 
-	printOutput(asciiLines, infoLines, color)
+	render.PrintOutput(asciiLines, infoLines, color)
 }

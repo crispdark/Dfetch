@@ -135,39 +135,4 @@ The following is a list of available command-line options.
 --no-color          # Removes all color from output
 ```
 
-## File structure
-
-```txt
-Dfetch
-├── customization
-│   ├── configfile.go    # Handles config file operations
-│   └── colors.go        # Supported colors
-│
-├── getsysinfo
-│   ├── cpu.go           # CPU information
-│   ├── distro.go        # Linux distribution
-│   ├── hostname.go      # System hostname
-│   ├── kernel.go        # Kernel version
-│   ├── localip.go       # Local IP address
-│   ├── memory.go        # Memory usage
-│   ├── uptime.go        # System uptime
-│   ├── battery.go       # Battery percentage and status
-│   ├── username.go      # Current username
-│   └── de.go            # Current Desktop environment
-│
-├── go.mod               # Go module config
-├── LICENSE              # Project license
-│
-├── logo                 # ASCII logos
-│   ├── arch.txt
-│   ├── debian.txt
-│   ├── linuxmint.txt
-│   ├── ubuntu.txt
-│   ├── fedora.txt
-│   └── ...
-│
-├── main.go              # Start / end of program
-└── README.md            # Project overview
-```
-
 > Note: AI tools were used for small changes and file organization, but the project’s code was written by humans.

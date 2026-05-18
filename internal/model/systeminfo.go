@@ -1,6 +1,6 @@
 package model
 
-import "Dfetch/internal/getsysinfo"
+import "dfetch/internal/getsysinfo"
 
 type SystemInfo struct {
 	DistroName   string
