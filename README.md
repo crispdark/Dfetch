@@ -126,11 +126,4 @@ The following is a list of supported distros. Dfetch definitely works on many mo
 - Linux Mint
 ```
 
-## Command-line options
-
-The following is a list of available command-line options.
-```
---no-color          # Removes all color from output
-```
-
 > Note: AI tools were used for small changes and file organization, but the project’s code was written by humans.
