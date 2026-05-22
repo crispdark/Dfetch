@@ -9,7 +9,7 @@ import (
 
 func ReadConfig() ([]string, string, string) {
 	home, _ := os.UserHomeDir()
-	configpath := filepath.Join(home, ".config", "Dfetch", "Dfetch.conf")
+	configpath := filepath.Join(home, ".config", "dfetch", "dfetch.conf")
 
 	if _, err := os.Stat(configpath); os.IsNotExist(err) {
 		err := CreateConfigFile()

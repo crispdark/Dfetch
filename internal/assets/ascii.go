@@ -12,7 +12,7 @@ func LoadASCII(fs embed.FS, distroID, color, ascii string) ([]string, string) {
 
 	// Try configured ascii name first
 	if _, err := fs.Open(file); err != nil {
-		fmt.Printf("Configured ASCII logoss: '%s' does not exist! Using default instead.\n", ascii)
+
 		// Fallback to distro ID
 		file = fmt.Sprintf("logo/%s.txt", strings.ToLower(distroID))
 
@@ -20,6 +20,11 @@ func LoadASCII(fs embed.FS, distroID, color, ascii string) ([]string, string) {
 		if _, err := fs.Open(file); err != nil {
 			file = "logo/linux.txt"
 		}
+
+		if ascii != "" {
+			fmt.Printf("Configured ASCII logo: '%s' does not exist! Using default instead.\n", ascii)
+		}
+
 	}
 
 	f, err := fs.Open(file)
