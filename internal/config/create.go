@@ -11,14 +11,14 @@ func CreateConfigFile() error {
 		return err
 	}
 
-	appConfigDir := filepath.Join(configDir, "Dfetch")
+	appConfigDir := filepath.Join(configDir, "dfetch")
 
 	// Create config directory if missing
 	if err := os.MkdirAll(appConfigDir, 0700); err != nil {
 		return err
 	}
 
-	configFile := filepath.Join(appConfigDir, "Dfetch.conf")
+	configFile := filepath.Join(appConfigDir, "dfetch.conf")
 
 	// Only create if missing
 	if _, err := os.Stat(configFile); os.IsNotExist(err) {
