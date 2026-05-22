@@ -100,6 +100,36 @@ Instead of just removing items, I'd recommend commenting them out to more easily
 
 If you ever want to return to the default settings, just remove the config file and run the program to generate a new one.
 
+## Supported information:
+
+Dfech can gather the following information:
+
+```txt
+- Hostname
+- Username
+- Distro / OS
+- CPU
+- Memory
+- Battery
+- DE (desktop enviroment)
+- Kernel
+- Local IP
+- Shell
+- Uptime
+```
+
+## Supported distros
+
+The following is a list of supported distros. Dfetch definitely works on many more distros, however these distros have been tested and have their own ASCII art. More distros will be added in the future.
+
+```txt
+- Debian
+- Arch
+- Fedora
+- Ubuntu
+- Linux Mint
+```
+
 ## Supported colors:
 ```txt
 
@@ -120,16 +150,4 @@ If you ever want to return to the default settings, just remove the config file 
 - Bright_magenta
 - Bright_cyan
 - Bright_white
-```
-
-## Supported distros
-
-The following is a list of supported distros. Dfetch definitely works on many more distros, however these distros have been tested and have their own ASCII art. More distros will be added in the future.
-
-```txt
-- Debian
-- Arch
-- Fedora
-- Ubuntu
-- Linux Mint
 ```
