@@ -102,8 +102,6 @@ If you ever want to return to the default settings, just remove the config file 
 
 ## Supported information:
 
-Dfech can gather the following information:
-
 ```txt
 - Hostname
 - Username
