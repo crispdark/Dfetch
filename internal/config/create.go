@@ -40,6 +40,7 @@ func CreateConfigFile() error {
 				"memory\n" +
 				"localip\n" +
 				"uptime\n" +
+				"shell\n" +
 				"//de\n",
 		)
 

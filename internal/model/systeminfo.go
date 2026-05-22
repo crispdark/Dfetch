@@ -17,6 +17,7 @@ type SystemInfo struct {
 	BatteryState string
 	DE           string
 	SessionType  string
+	Shell        string
 }
 
 func CollectSystemInfo() SystemInfo {
@@ -41,5 +42,6 @@ func CollectSystemInfo() SystemInfo {
 		BatteryState: batteryStatus,
 		DE:           de,
 		SessionType:  sessionType,
+		Shell:        getsysinfo.Shell(),
 	}
 }
