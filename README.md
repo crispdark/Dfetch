@@ -1,18 +1,24 @@
 # Dfetch
 
-Command-line utility inspired by [Neofetch](https://github.com/dylanaraps/neofetch) and written in Go. Dfetch shows information relating to your OS, hardware, and software in a visually pleasing way.
+Dfetch is a command-line utility inspired by [Neofetch](https://github.com/dylanaraps/neofetch?utm_source=chatgpt.com) and written in Go. It’s designed to be simple and easy to configure without overwhelming the user with endless options. Dfetch focuses on a clean default, a minimal and compact look, and extremely fast performance. It also keeps the displayed information focused and avoids external dependencies.
 
-Dfetch tries to be minimal and visually appealing while also being fast and very easy to configure.
 
 ## Installation
 
-You can install Dfetch by going to the [releases page](https://github.com/David17c/Dfetch/releases) and installing the right version for your distro.
+You can install Dfetch from the releases page:
 
-If there is no release that works on your distro, you're going to have to compile it yourself.
+[Dfetch Releases](https://github.com/David17c/Dfetch/releases)
 
+Download the version that matches your Linux distribution.
+
+If no compatible release is available for your distro, using the steps below you can compile Dfetch from source instead.
 ### Step 1
 
-Go to the main GitHub page for this repo and click the green Code button. When a dropdown menu appears, click "Download ZIP".
+Go to the main GitHub repository page:
+
+[Dfetch GitHub Repository](https://github.com/David17c/Dfetch)
+
+Click the green Code button, then select Download ZIP.
 
 ### Step 2
 
