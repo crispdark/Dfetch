@@ -12,6 +12,7 @@ You can install Dfetch from the releases page:
 Download the version that matches your Linux distribution.
 
 If no compatible release is available for your distro, using the steps below you can compile Dfetch from source instead.
+
 ### Step 1
 
 Go to the main GitHub repository page:
