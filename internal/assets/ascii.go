@@ -11,7 +11,7 @@ func LoadASCII(fs embed.FS, distroID, color string) ([]string, string) {
 
 	file := fmt.Sprintf("logo/%s.txt", strings.ToLower(distroID))
 
-	// If distro logo also doesn't exist, fallback to linux
+	// If distro logo doesn't exist use Linux logo
 	if _, err := fs.Open(file); err != nil {
 		file = "logo/linux.txt"
 	}

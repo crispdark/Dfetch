@@ -1,8 +1,10 @@
 package config
 
 import (
+	"dfetch/internal/getsysinfo"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func CreateConfigFile() error {
@@ -22,13 +24,10 @@ func CreateConfigFile() error {
 
 	// Only create if missing
 	if _, err := os.Stat(configFile); os.IsNotExist(err) {
-		file, err := os.Create(configFile)
-		if err != nil {
-			return err
-		}
-		defer file.Close()
 
-		_, err = file.WriteString(
+		var config strings.Builder
+
+		config.WriteString(
 			"// Config file for Dfetch\n" +
 				"// Lines starting with '//' will be ignored\n" +
 				"// Default settings can be restored by deleting this file\n\n" +
@@ -41,10 +40,22 @@ func CreateConfigFile() error {
 				"memory\n" +
 				"localip\n" +
 				"uptime\n" +
-				"//battery\n" +
 				"//de\n",
 		)
 
+		// Add battery if available
+		_, present := getsysinfo.Battery()
+		if present != "unknown" {
+			config.WriteString("battery\n")
+		}
+
+		file, err := os.Create(configFile)
+		if err != nil {
+			return err
+		}
+		defer file.Close()
+
+		_, err = file.WriteString(config.String())
 		if err != nil {
 			return err
 		}
