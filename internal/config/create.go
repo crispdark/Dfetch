@@ -48,6 +48,8 @@ func CreateConfigFile() error {
 		_, present := getsysinfo.Battery()
 		if present != "unknown" {
 			config.WriteString("battery\n")
+		} else {
+			config.WriteString("//battery\n")
 		}
 
 		file, err := os.Create(configFile)
