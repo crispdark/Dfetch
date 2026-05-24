@@ -31,9 +31,26 @@ func CreateConfigFile() error {
 			"// Config file for Dfetch\n" +
 				"// Lines starting with '//' will be ignored\n" +
 				"// Default settings can be restored by deleting this file\n\n" +
-				"// color: blue\n\n" +
-				"// ASCII: ubuntu\n\n" +
-				"// Info to fetch:\n" +
+				"// Change the color of the ASCII art. Supported colors are listed below.\n" +
+				"color: default\n\n" +
+				"// Supported colors:\n" +
+				"// Black\n" +
+				"// Red\n" +
+				"// Green\n" +
+				"// Yellow\n" +
+				"// Blue\n" +
+				"// Magenta\n" +
+				"// Cyan\n" +
+				"// White\n" +
+				"// Bright_black / gray / grey\n" +
+				"// Bright_red\n" +
+				"// Bright_green\n" +
+				"// Bright_yellow\n" +
+				"// Bright_blue\n" +
+				"// Bright_magenta\n" +
+				"// Bright_cyan\n" +
+				"// Bright_white\n\n" +
+				"// Underneath a list of what information to show and in what order. Its recommended not to remove items but comment them out instead.\n\n" +
 				"os\n" +
 				"kernel\n" +
 				"cpu\n" +
@@ -52,13 +69,7 @@ func CreateConfigFile() error {
 			config.WriteString("//battery\n")
 		}
 
-		file, err := os.Create(configFile)
-		if err != nil {
-			return err
-		}
-		defer file.Close()
-
-		_, err = file.WriteString(config.String())
+		err = os.WriteFile(configFile, []byte(config.String()), 0600)
 		if err != nil {
 			return err
 		}
