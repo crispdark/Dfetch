@@ -29,7 +29,7 @@ func LoadASCII(fs embed.FS, distroID, color string) ([]string, string) {
 		line := scanner.Text()
 
 		if strings.HasPrefix(line, "color:") {
-			if color == "" {
+			if color == "" || color == "default" {
 				color = strings.TrimSpace(strings.TrimPrefix(line, "color:"))
 			}
 			continue

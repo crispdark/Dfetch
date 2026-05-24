@@ -28,35 +28,27 @@ func CreateConfigFile() error {
 
 		// Default config file
 		config.WriteString(
-			"// Config file for Dfetch\n" +
-				"// Lines starting with '//' will be ignored\n" +
-				"// Default settings can be restored by deleting this file\n\n" +
-				"// Change the color of the ASCII art. Supported colors are listed below.\n" +
+			"// ========================\n" +
+				"// Color\n" +
+				"// ========================\n\n" +
+				"// ASCII color\n" +
 				"color: default\n\n" +
-				"// Supported colors:\n" +
-				"// Black\n" +
-				"// Red\n" +
-				"// Green\n" +
-				"// Yellow\n" +
-				"// Blue\n" +
-				"// Magenta\n" +
-				"// Cyan\n" +
-				"// White\n" +
-				"// Bright_black / gray / grey\n" +
-				"// Bright_red\n" +
-				"// Bright_green\n" +
-				"// Bright_yellow\n" +
-				"// Bright_blue\n" +
-				"// Bright_magenta\n" +
-				"// Bright_cyan\n" +
-				"// Bright_white\n\n" +
-				"// Underneath a list of what information to show and in what order. Its recommended not to remove items but comment them out instead.\n\n" +
+				"// Available colors:\n" +
+				"// black, red, green, yellow, blue,\n" +
+				"// magenta, cyan, white,\n" +
+				"// bright_black, bright_red,\n" +
+				"// bright_green, bright_yellow,\n" +
+				"// bright_blue, bright_magenta,\n" +
+				"// bright_cyan, bright_white\n\n" +
+				"// ========================\n" +
+				"// System Information\n" +
+				"// ========================\n\n" +
 				"os\n" +
 				"kernel\n" +
+				"uptime\n" +
 				"cpu\n" +
 				"memory\n" +
 				"localip\n" +
-				"uptime\n" +
 				"shell\n" +
 				"//de\n",
 		)

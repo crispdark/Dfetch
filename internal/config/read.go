@@ -38,7 +38,7 @@ func ReadConfig() ([]string, string) {
 		}
 
 		switch {
-		case strings.HasPrefix(line, "ascii-color:"):
+		case strings.HasPrefix(line, "color:"):
 			color = strings.TrimSpace(strings.TrimPrefix(line, "color:"))
 			continue
 		}
