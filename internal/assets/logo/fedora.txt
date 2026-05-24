@@ -1,4 +1,4 @@
-color: bright_blue
+asciicolor: bright_blue
         .-----.
        |   --  |
        |  |  '_'  

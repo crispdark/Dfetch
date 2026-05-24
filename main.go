@@ -9,19 +9,19 @@ import (
 )
 
 func main() {
-	lines, color := config.ReadConfig()
+	lines, asciicolor := config.ReadConfig()
 
 	sys := model.CollectSystemInfo()
 
-	asciiLines, color := assets.LoadASCII(
+	asciiLines, asciicolor := assets.LoadASCII(
 		assets.LogoFS,
 		sys.ID,
-		color,
+		asciicolor,
 	)
 
-	color = customization.GetColorCode(color)
+	asciicolor = customization.GetColorCode(asciicolor)
 
 	infoLines := render.BuildInfoLines(sys, lines)
 
-	render.PrintOutput(asciiLines, infoLines, color)
+	render.PrintOutput(asciiLines, infoLines, asciicolor)
 }

@@ -25,7 +25,7 @@ func ReadConfig() ([]string, string) {
 	defer file.Close()
 
 	var lines []string
-	var color string
+	var asciicolor string
 
 	scanner := bufio.NewScanner(file)
 
@@ -38,8 +38,8 @@ func ReadConfig() ([]string, string) {
 		}
 
 		switch {
-		case strings.HasPrefix(line, "color:"):
-			color = strings.TrimSpace(strings.TrimPrefix(line, "color:"))
+		case strings.HasPrefix(line, "asciicolor:"):
+			asciicolor = strings.TrimSpace(strings.TrimPrefix(line, "asciicolor:"))
 			continue
 		}
 
@@ -50,5 +50,5 @@ func ReadConfig() ([]string, string) {
 		return nil, ""
 	}
 
-	return lines, color
+	return lines, asciicolor
 }

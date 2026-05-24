@@ -1,4 +1,4 @@
-color: bright_red
+asciicolor: bright_red
   _____
  /  __ \
 |  /    |  

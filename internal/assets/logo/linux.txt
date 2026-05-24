@@ -1,4 +1,4 @@
-color: bright_yellow
+asciicolor: bright_yellow
    .--.  
   |o_o | 
   |:_/ | 

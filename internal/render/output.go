@@ -38,7 +38,7 @@ func BuildInfoLines(sys model.SystemInfo, configLines []string) []string {
 	return infoLines
 }
 
-func PrintOutput(asciiLines, infoLines []string, color string) {
+func PrintOutput(asciiLines, infoLines []string, asciicolor string) {
 	maxLen := getMaxWidth(asciiLines)
 
 	totalLines := len(asciiLines)
@@ -58,7 +58,7 @@ func PrintOutput(asciiLines, infoLines []string, color string) {
 			right = infoLines[i]
 		}
 
-		fmt.Printf("\x1b[1m%s%-*s\x1b[0m %s\n", color, maxLen, left, right)
+		fmt.Printf("\x1b[1m%s%-*s\x1b[0m %s\n", asciicolor, maxLen, left, right)
 	}
 }
 

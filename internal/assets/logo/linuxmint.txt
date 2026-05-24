@@ -1,4 +1,4 @@
-color: bright_green
+asciicolor: bright_green
  ____________
 |_           \  
   | |  _____ |

@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func LoadASCII(fs embed.FS, distroID, color string) ([]string, string) {
+func LoadASCII(fs embed.FS, distroID, asciicolor string) ([]string, string) {
 
 	file := fmt.Sprintf("logo/%s.txt", strings.ToLower(distroID))
 
@@ -18,7 +18,7 @@ func LoadASCII(fs embed.FS, distroID, color string) ([]string, string) {
 
 	f, err := fs.Open(file)
 	if err != nil {
-		return nil, color
+		return nil, asciicolor
 	}
 	defer f.Close()
 
@@ -28,9 +28,9 @@ func LoadASCII(fs embed.FS, distroID, color string) ([]string, string) {
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		if strings.HasPrefix(line, "color:") {
-			if color == "" || color == "default" {
-				color = strings.TrimSpace(strings.TrimPrefix(line, "color:"))
+		if strings.HasPrefix(line, "asciicolor:") {
+			if asciicolor == "" || asciicolor == "default" {
+				asciicolor = strings.TrimSpace(strings.TrimPrefix(line, "asciicolor:"))
 			}
 			continue
 		}
@@ -39,8 +39,8 @@ func LoadASCII(fs embed.FS, distroID, color string) ([]string, string) {
 	}
 
 	if err := scanner.Err(); err != nil {
-		return nil, color
+		return nil, asciicolor
 	}
 
-	return lines, color
+	return lines, asciicolor
 }
