@@ -15,7 +15,7 @@ func BuildInfoLines(sys model.SystemInfo, configLines []string) []string {
 		"kernel":  fmt.Sprintf("Kernel: %s", sys.Kernel),
 		"cpu":     fmt.Sprintf("CPU: %s", sys.CPU),
 		"memory":  fmt.Sprintf("Memory: %s", sys.Memory),
-		"ip":      fmt.Sprintf("Local IP (%s): %s", sys.IPVersion, sys.LocalIP),
+		"localip": fmt.Sprintf("Local IP (%s): %s", sys.IPVersion, sys.LocalIP),
 		"uptime":  fmt.Sprintf("Uptime: %s", sys.Uptime),
 		"battery": fmt.Sprintf("Battery: %d%% [%s]", sys.Battery, sys.BatteryState),
 		"de":      fmt.Sprintf("DE: %s (%s)", sys.DE, sys.SessionType),

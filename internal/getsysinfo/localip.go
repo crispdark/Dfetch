@@ -1,8 +1,6 @@
 package getsysinfo
 
-import (
-	"net"
-)
+import "net"
 
 func LocalIP() (string, string) {
 	interfaces, err := net.Interfaces()
@@ -14,6 +12,7 @@ func LocalIP() (string, string) {
 		if iface.Flags&net.FlagUp == 0 {
 			continue
 		}
+
 		if iface.Flags&net.FlagLoopback != 0 {
 			continue
 		}
@@ -33,7 +32,9 @@ func LocalIP() (string, string) {
 				ip = v.IP
 			}
 
-			if ip == nil || ip.IsLoopback() {
+			if ip == nil ||
+				ip.IsLoopback() ||
+				ip.IsLinkLocalUnicast() {
 				continue
 			}
 
@@ -46,5 +47,6 @@ func LocalIP() (string, string) {
 			}
 		}
 	}
+
 	return "unknown", "unknown"
 }

@@ -49,7 +49,7 @@ func CreateConfigFile() error {
 				"cpu\n" +
 				"memory\n" +
 				"localip\n" +
-				"shell\n" +
+				"//shell\n" +
 				"//de\n",
 		)
 
