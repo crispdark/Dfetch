@@ -49,7 +49,7 @@ func BuildInfoLines(sys model.SystemInfo, configLines []string, headercolor stri
 		),
 
 		"localip": fmt.Sprintf(
-			"%sLocal IP (%s):\x1b[0m %s%s\x1b[0m",
+			"%sLocal IP:\x1b[0m (%s) %s%s\x1b[0m",
 			labelcolor,
 			sys.IPVersion,
 			infocolor,
@@ -138,15 +138,3 @@ func getMaxWidth(lines []string) int {
 
 	return maxLen
 }
-
-// infoMap := map[string]string{
-// 	"os":      fmt.Sprintf("\x1b[1m%sOS: %s\x1b[0m", asciicolor, sys.DistroName),
-// 	"kernel":  fmt.Sprintf("\x1b[1m%sKernel: %s\x1b[0m", asciicolor, sys.Kernel),
-// 	"cpu":     fmt.Sprintf("\x1b[1m%sCPU: %s\x1b[0m", asciicolor, sys.CPU),
-// 	"memory":  fmt.Sprintf("\x1b[1m%sMemory: %s\x1b[0m", asciicolor, sys.Memory),
-// 	"localip": fmt.Sprintf("\x1b[1m%sLocal IP (%s): %s\x1b[0m", asciicolor, sys.IPVersion, sys.LocalIP),
-// 	"uptime":  fmt.Sprintf("\x1b[1m%sUptime: %s\x1b[0m", asciicolor, sys.Uptime),
-// 	"battery": fmt.Sprintf("\x1b[1m%sBattery: %d%% [%s]\x1b[0m", asciicolor, sys.Battery, sys.BatteryState),
-// 	"de":      fmt.Sprintf("\x1b[1m%sDE: %s (%s)\x1b[0m", asciicolor, sys.DE, sys.SessionType),
-// 	"shell":   fmt.Sprintf("\x1b[1m%sShell: %s\x1b[0m", asciicolor, sys.Shell),
-// }
