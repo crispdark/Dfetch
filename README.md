@@ -1,7 +1,10 @@
 # Dfetch
 
-Dfetch is a command-line utility inspired by [Neofetch](https://github.com/dylanaraps/neofetch?utm_source=chatgpt.com) and written in Go. It’s designed to be simple and easy to configure. Dfetch focuses on a clean default, a minimal and compact look, and every fast performance. It also avoids external dependencies.
+Dfetch allows you to display system information in a simple, fast and visually appealing way. Dfetch focuses on looking clean and compact by default while still showing usefull info. It also tries to be very fast so you can autostart it with your terminal without having to wait. Dfetch also avoids using external dependencies.
 
+## Why use this?
+
+I dont really think there is much of a reason to use this over the many other options there are out there. I'm just working on this for fun and it doesnt really fill any gap in the market. I ts not worse them most other options bu not different either.
 
 ## Installation
 
