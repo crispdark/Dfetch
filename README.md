@@ -1,6 +1,6 @@
 # Dfetch
 
-Dfetch is a command-line utility inspired by [Neofetch](https://github.com/dylanaraps/neofetch?utm_source=chatgpt.com) and written in Go. It’s designed to be simple and easy to configure without overwhelming the user with endless options. Dfetch focuses on a clean default, a minimal and compact look, and extremely fast performance. It also keeps the displayed information focused and avoids external dependencies.
+Dfetch is a command-line utility inspired by [Neofetch](https://github.com/dylanaraps/neofetch?utm_source=chatgpt.com) and written in Go. It’s designed to be simple and easy to configure. Dfetch focuses on a clean default, a minimal and compact look, and every fast performance. It also avoids external dependencies.
 
 
 ## Installation
@@ -59,9 +59,7 @@ go version
 
 ### Step 4
 
-Now that you have Go installed and have navigated to the root of the project folder, you're nearly done.
-
-Run:
+Now that you have Go installed and have navigated to the root of the project folder, run:
 
 ```bash
 go build -ldflags="-s -w" -trimpath -o build/Dfetch
