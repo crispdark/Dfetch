@@ -53,9 +53,9 @@ func CreateConfigFile() error {
 				"uptime\n" +
 				"cpu\n" +
 				"memory\n" +
-				"localip\n" +
-				"//shell\n" +
-				"//de\n",
+				"// localip\n" +
+				"// shell\n" +
+				"// de\n",
 		)
 
 		// Enable battery in config if one is present
