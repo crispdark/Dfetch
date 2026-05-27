@@ -48,9 +48,8 @@ func BuildInfoLines(sys model.SystemInfo, configLines []string, headercolor stri
 		),
 
 		"localip": fmt.Sprintf(
-			"%sLocal IP (%s):\x1b[0m %s%s\x1b[0m",
+			"%sIP:\x1b[0m %s%s\x1b[0m",
 			labelcolor,
-			sys.IPVersion,
 			infocolor,
 			sys.LocalIP,
 		),

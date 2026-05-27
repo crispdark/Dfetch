@@ -22,7 +22,7 @@ type SystemInfo struct {
 
 func CollectSystemInfo() SystemInfo {
 	DistroName, id := getsysinfo.Distro()
-	localIP, version := getsysinfo.LocalIP()
+	localIP := getsysinfo.LocalIP()
 	battery, batteryStatus := getsysinfo.Battery()
 
 	de, sessionType := getsysinfo.DesktopEnvironment()
@@ -36,7 +36,6 @@ func CollectSystemInfo() SystemInfo {
 		Username:     getsysinfo.Username(),
 		Hostname:     getsysinfo.Hostname(),
 		LocalIP:      localIP,
-		IPVersion:    version,
 		Uptime:       getsysinfo.Uptime(),
 		Battery:      battery,
 		BatteryState: batteryStatus,

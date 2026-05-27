@@ -1,11 +1,14 @@
 package getsysinfo
 
-import "net"
+import (
+	"net"
+	"strconv"
+)
 
-func LocalIP() (string, string) {
+func LocalIP() string {
 	interfaces, err := net.Interfaces()
 	if err != nil {
-		return "unknown", "unknown"
+		return "unknown"
 	}
 
 	for _, iface := range interfaces {
@@ -23,11 +26,15 @@ func LocalIP() (string, string) {
 		}
 
 		for _, addr := range addrs {
-			var ip net.IP
+			var (
+				ip   net.IP
+				mask net.IPMask
+			)
 
 			switch v := addr.(type) {
 			case *net.IPNet:
 				ip = v.IP
+				mask = v.Mask
 			case *net.IPAddr:
 				ip = v.IP
 			}
@@ -38,15 +45,21 @@ func LocalIP() (string, string) {
 				continue
 			}
 
+			prefix := ""
+			if mask != nil {
+				ones, _ := mask.Size()
+				prefix = "/" + strconv.Itoa(ones)
+			}
+
 			if ipv4 := ip.To4(); ipv4 != nil {
-				return ipv4.String(), "IPv4"
+				return ipv4.String() + prefix
 			}
 
 			if ip.To16() != nil {
-				return ip.String(), "IPv6"
+				return ip.String() + prefix
 			}
 		}
 	}
 
-	return "unknown", "unknown"
+	return "unknown"
 }
