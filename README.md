@@ -4,7 +4,7 @@ Dfetch allows you to display system information in a simple, fast and visually a
 
 ## Why use this?
 
-I dont really think there is much of a reason to use this over the many other options there are out there. I'm just working on this for fun and it doesnt really fill any gap in the market. Its not worse then most other options but not different either.
+There isn't much of a reason to use this utility over the many other options out there. I'm just working on this for fun and it doesnt really fill any gap in the market. Its not worse then most other options but not different either.
 
 ## Installation
 
