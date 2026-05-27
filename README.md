@@ -2,9 +2,11 @@
 
 A minimal and practical system information tool focused on clean, compact output and fast startup times. It is designed to provide useful system information while being lightweight enough to launch instantly with your terminal.
 
+![Dfetch output example](image/output_example.png)
+
 ## Why use this?
 
-Dfetch does not try to compete with heavily customizable alternatives like [Neofetch](https://github.com/dylanaraps/neofetch) or [Fastfetch](https://github.com/fastfetch-cli/fastfetch). The project exists mainly as a fun and learning project for myself, while still being useful for people who prefer minimal, practical tools with good defaults.
+Dfetch does not try to compete with heavily customizable alternatives like [Neofetch](https://github.com/dylanaraps/neofetch) or [Fastfetch](https://github.com/fastfetch-cli/fastfetch). The project exists mainly as a fun project for myself, while still being useful for people who prefer minimal, practical tools with good defaults.
 
 ## Installation
 
