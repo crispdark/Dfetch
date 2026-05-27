@@ -1,7 +1,6 @@
 package config
 
 import (
-	"dfetch/internal/getsysinfo"
 	"os"
 	"path/filepath"
 	"strings"
@@ -53,18 +52,11 @@ func CreateConfigFile() error {
 				"uptime\n" +
 				"cpu\n" +
 				"memory\n" +
-				"// localip\n" +
+				"localip\n" +
 				"// shell\n" +
-				"// de\n",
+				"// de\n" +
+				"// battery\n",
 		)
-
-		// Enable battery in config if one is present
-		_, present := getsysinfo.Battery()
-		if present != "unknown" {
-			config.WriteString("battery\n")
-		} else {
-			config.WriteString("//battery\n")
-		}
 
 		err = os.WriteFile(configFile, []byte(config.String()), 0600)
 		if err != nil {

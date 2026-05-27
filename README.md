@@ -123,13 +123,11 @@ kernel
 uptime
 cpu
 memory
-// localip
+localip
 // shell
 // de
-battery
+// battery
 ```
-
-> When creating the config file Dfetch only enables battery if one is present.
 
 ## Supported information:
 
