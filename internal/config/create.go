@@ -33,10 +33,10 @@ func CreateConfigFile() error {
 				"// Color\n" +
 				"//------------------------\n\n" +
 				"// ASCII color\n" +
-				"labelcolor: default\n" +
-				"infocolor: default\n" +
+				"asciicolor: default\n" +
 				"headercolor: default\n" +
-				"asciicolor: default\n\n" +
+				"labelcolor: default\n" +
+				"infocolor: default\n\n" +
 				"// Available colors:\n" +
 				"// black, red, green, yellow, blue,\n" +
 				"// magenta, cyan, white,\n" +

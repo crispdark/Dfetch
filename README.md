@@ -1,6 +1,6 @@
 # Dfetch
 
-Dfetch is a minimal and practical system information tool focused on clean, compact output and fast startup times. It is designed to provide useful system information while remaining lightweight enough to launch instantly with your terminal.
+A minimal and practical system information tool focused on clean, compact output and fast startup times. It is designed to provide useful system information while being lightweight enough to launch instantly with your terminal.
 
 ## Why use this?
 
@@ -8,83 +8,7 @@ Dfetch does not try to compete with heavily customizable alternatives like [Neof
 
 ## Installation
 
-You can install Dfetch from the releases page:
-
-[Dfetch Releases](https://github.com/David17c/Dfetch/releases)
-
-Download the version that matches your Linux distribution.
-
-If no compatible release is available for your distro, using the steps below you can compile Dfetch from source instead.
-
-### Step 1
-
-Go to the main GitHub repository page:
-
-[Dfetch GitHub Repository](https://github.com/David17c/Dfetch)
-
-Click the green Code button, then select Download ZIP.
-
-### Step 2
-
-Unzip the file you just downloaded and navigate to it in the terminal using the `cd` command.
-
-```bash
-cd ~/Downloads/Dfetch
-```
-
-### Step 3
-
-Install the [Go](https://go.dev/) programming language. This step is different depending on your distro.
-
-Debian / Ubuntu:
-
-```bash
-sudo apt install golang-go
-```
-
-Arch:
-
-```bash
-sudo pacman -S go
-```
-
-Fedora:
-
-```bash
-sudo dnf install golang
-```
-
-You can verify it's installed by running:
-
-```bash
-go version
-```
-
-### Step 4
-
-Now that you have Go installed and have navigated to the root of the project folder, run:
-
-```bash
-go build -ldflags="-s -w" -trimpath -o build/Dfetch
-```
-
-To compile the program and store the executable file in the `Dfetch/build` folder.
-
-You can now execute the file you just created and use the program.
-
-## Usage
-
-Run Dfetch using:
-
-```bash
-dfetch
-```
-
-Or, if you compiled it from source:
-
-```bash
-./build/Dfetch
-```
+This program does not currently provide official packages for any platform. You can either build it from source or [download the latest prebuilt binaries](https://github.com/David17c/Dfetch/releases).
 
 ## Customization
 
