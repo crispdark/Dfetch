@@ -6,15 +6,15 @@ A minimal and practical system information tool focused on clean, compact output
 
 ## Why use this?
 
-Dfetch does not try to compete with heavily customizable alternatives like [Neofetch](https://github.com/dylanaraps/neofetch) or [Fastfetch](https://github.com/fastfetch-cli/fastfetch). The project exists mainly as a fun project for myself, while still being useful for people who prefer minimal, practical tools with good defaults.
+Dfetch does not try to compete with heavily customizable alternatives like [Neofetch](https://github.com/dylanaraps/neofetch) or [Fastfetch](https://github.com/fastfetch-cli/fastfetch). The project exists mainly as a fun project for myself, while still being useful for those who prefer minimal, practical tools with good defaults.
 
 ## Installation
 
-This program does not currently provide official packages for any platform. You can either build it from source or [download the latest prebuilt binaries](https://github.com/David17c/Dfetch/releases).
+Currently no official packages for any platform is provided. You can either build Dfetch from source or [download the latest prebuilt binaries](https://github.com/David17c/Dfetch/releases).
 
 ## Customization
 
-When you first run Dfetch it creates a config file in `~/.config/Dfetch/Dfetch.conf`.
+`~/.config/Dfetch/Dfetch.conf`
 
 ```
 // Lines starting with `//` are comments and are ignored by Dfetch.
