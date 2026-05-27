@@ -4,7 +4,7 @@ A minimal and practical system information tool focused on clean, compact output
 
 ## Why use this?
 
-Dfetch does not try to compete with heavily customizable alternatives like [Neofetch](https://github.com/dylanaraps/neofetch) or [Fasfetch](https://github.com/fastfetch-cli/fastfetch). The project exists mainly as a fun and learning project for myself, while still being useful for people who prefer minimal, practical tools with good defaults.
+Dfetch does not try to compete with heavily customizable alternatives like [Neofetch](https://github.com/dylanaraps/neofetch) or [Fastfetch](https://github.com/fastfetch-cli/fastfetch). The project exists mainly as a fun and learning project for myself, while still being useful for people who prefer minimal, practical tools with good defaults.
 
 ## Installation
 
