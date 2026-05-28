@@ -14,73 +14,64 @@ func visibleLen(s string) int {
 	return len(clean)
 }
 
-func BuildInfoLines(sys model.SystemInfo, configLines []string, headercolor string, infocolor string, labelcolor string) []string {
+func BuildInfoLines(sys model.SystemInfo, configLines []string, accentcolor string) []string {
 
-	userInfo := fmt.Sprintf("%s%s@%s\x1b[0m ", headercolor, sys.Username, sys.Hostname)
+	userInfo := fmt.Sprintf("%s%s@%s\x1b[0m ", accentcolor, sys.Username, sys.Hostname)
 
 	infoMap := map[string]string{
 		"os": fmt.Sprintf(
-			"%sOS:\x1b[0m %s%s\x1b[0m",
-			labelcolor,
-			infocolor,
+			"%sOS:\x1b[0m %s",
+			accentcolor,
 			sys.DistroName,
 		),
 
 		"kernel": fmt.Sprintf(
-			"%sKernel:\x1b[0m %s%s\x1b[0m",
-			labelcolor,
-			infocolor,
+			"%sKernel:\x1b[0m %s",
+			accentcolor,
 			sys.Kernel,
 		),
 
 		"cpu": fmt.Sprintf(
-			"%sCPU:\x1b[0m %s%s\x1b[0m",
-			labelcolor,
-			infocolor,
+			"%sCPU:\x1b[0m %s",
+			accentcolor,
 			sys.CPU,
 		),
 
 		"memory": fmt.Sprintf(
-			"%sMemory:\x1b[0m %s%s\x1b[0m",
-			labelcolor,
-			infocolor,
+			"%sMemory:\x1b[0m %s",
+			accentcolor,
 			sys.Memory,
 		),
 
 		"localip": fmt.Sprintf(
-			"%sIP:\x1b[0m %s%s\x1b[0m",
-			labelcolor,
-			infocolor,
+			"%sIP:\x1b[0m %s",
+			accentcolor,
 			sys.LocalIP,
 		),
 
 		"uptime": fmt.Sprintf(
-			"%sUptime:\x1b[0m %s%s\x1b[0m",
-			labelcolor,
-			infocolor,
+			"%sUptime:\x1b[0m %s",
+			accentcolor,
 			sys.Uptime,
 		),
 
 		"battery": fmt.Sprintf(
-			"%sBattery:\x1b[0m %s%d%% [%s]\x1b[0m",
-			labelcolor,
-			infocolor,
+			"%sBattery:\x1b[0m %d%% [%s]",
+			accentcolor,
 			sys.Battery,
 			sys.BatteryState,
 		),
 
 		"de": fmt.Sprintf(
-			"%sDE:\x1b[0m %s%s (%s)\x1b[0m",
-			labelcolor,
-			infocolor,
+			"%sDE:\x1b[0m %s (%s)",
+			accentcolor,
 			sys.DE,
 			sys.SessionType,
 		),
 
 		"shell": fmt.Sprintf(
-			"%sShell:\x1b[0m %s%s\x1b[0m",
-			labelcolor,
-			infocolor,
+			"%sShell:\x1b[0m %s",
+			accentcolor,
 			sys.Shell,
 		),
 	}

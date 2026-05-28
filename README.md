@@ -25,9 +25,7 @@ Currently no official package for any platform is provided. You can either build
 //------------------------
 
 // ASCII color
-headercolor: default
-labelcolor: default
-infocolor: default
+accentcolor: default
 asciicolor: default
 
 // Available colors:

@@ -11,7 +11,7 @@ import (
 func main() {
 
 	// Read / create the config file
-	lines, asciicolor, headercolor, infocolor, labelcolor := config.ReadConfig()
+	lines, asciicolor, accentcolor := config.ReadConfig()
 
 	// Collect the users system info
 	sys := model.CollectSystemInfo()
@@ -23,27 +23,19 @@ func main() {
 		asciicolor,
 	)
 
-	if labelcolor == "" || labelcolor == "default" {
-		labelcolor = asciicolor
-	}
-
-	if headercolor == "" || headercolor == "default" {
-		headercolor = asciicolor
+	if accentcolor == "" || accentcolor == "default" {
+		accentcolor = asciicolor
 	}
 
 	// Get the colors corresponding ascii codes
 	asciicolor = customization.GetColorCode(asciicolor)
-	headercolor = customization.GetColorCode(headercolor)
-	infocolor = customization.GetColorCode(infocolor)
-	labelcolor = customization.GetColorCode(labelcolor)
+	accentcolor = customization.GetColorCode(accentcolor)
 
 	// Build the info lines
 	infoLines := render.BuildInfoLines(
 		sys,
 		lines,
-		headercolor,
-		infocolor,
-		labelcolor,
+		accentcolor,
 	)
 
 	// Put everything together and print it
