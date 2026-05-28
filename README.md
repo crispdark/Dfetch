@@ -10,7 +10,7 @@ Dfetch does not try to compete with heavily customizable alternatives like [Neof
 
 ## Installation
 
-Currently no official packages for any platform is provided. You can either build Dfetch from source or [download the latest prebuilt binaries](https://github.com/David17c/Dfetch/releases).
+Currently no official package for any platform is provided. You can either build Dfetch from source or [download the latest prebuilt binaries](https://github.com/David17c/Dfetch/releases).
 
 ## Customization
 
