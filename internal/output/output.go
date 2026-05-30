@@ -67,7 +67,7 @@ func getMaxWidth(lines []string) int {
 	maxWidth := 0
 	for _, line := range lines {
 		if w := visibleLen(line); w > maxWidth {
-			maxWidth = w
+			maxWidth = w + 4
 		}
 	}
 	return maxWidth
