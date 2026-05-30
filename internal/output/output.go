@@ -59,7 +59,7 @@ func PrintOutput(asciiLines, infoLines []string, asciiColor string) {
 			right = infoLines[i]
 		}
 
-		fmt.Printf("\x1b[1m%s%-*s\x1b[0m %s\n", asciiColor, width, left, right)
+		fmt.Printf("%s%-*s\x1b[0m %s\n", asciiColor, width, left, right)
 	}
 }
 
