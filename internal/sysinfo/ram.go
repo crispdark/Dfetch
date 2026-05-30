@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func Memory() string {
+func Ram() string {
 	file, err := os.Open("/proc/meminfo")
 	if err != nil {
 		return "unknown"

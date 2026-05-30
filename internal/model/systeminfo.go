@@ -19,6 +19,8 @@ type SystemInfo struct {
 	DE           string
 	SessionType  string
 	Shell        string
+	Terminal     string
+	colorterm    string
 }
 
 func CollectSystemInfo(enabledModules []string) SystemInfo {
@@ -38,7 +40,7 @@ func CollectSystemInfo(enabledModules []string) SystemInfo {
 			sys.CPU = sysinfo.Cpu()
 
 		case "memory":
-			sys.Memory = sysinfo.Memory()
+			sys.Memory = sysinfo.Ram()
 
 		case "localip":
 			sys.LocalIP = sysinfo.LocalIP()
@@ -54,6 +56,9 @@ func CollectSystemInfo(enabledModules []string) SystemInfo {
 
 		case "shell":
 			sys.Shell = sysinfo.Shell()
+
+		case "terminal":
+			sys.Terminal = sysinfo.Terminal()
 		}
 	}
 

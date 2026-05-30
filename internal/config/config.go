@@ -105,7 +105,8 @@ func CreateConfigFile() error {
 				"localip\n" +
 				"// shell\n" +
 				"// de\n" +
-				"// battery\n",
+				"// battery\n" +
+				"// terminal\n",
 		)
 
 		err = os.WriteFile(configFile, []byte(config.String()), 0600)

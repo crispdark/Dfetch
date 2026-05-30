@@ -15,15 +15,16 @@ func visibleLen(s string) int {
 
 func BuildInfoLines(sys model.SystemInfo, configLines []string, accent string) []string {
 	info := map[string]string{
-		"os":      field(accent, "OS", sys.DistroName),
-		"kernel":  field(accent, "Kernel", sys.Kernel),
-		"cpu":     field(accent, "CPU", sys.CPU),
-		"memory":  field(accent, "RAM", sys.Memory),
-		"localip": field(accent, "IP", sys.LocalIP),
-		"uptime":  field(accent, "Uptime", sys.Uptime),
-		"shell":   field(accent, "Shell", sys.Shell),
-		"battery": fmt.Sprintf("%sBattery:\x1b[0m %d%% [%s]", accent, sys.Battery, sys.BatteryState),
-		"de":      fmt.Sprintf("%sDE:\x1b[0m %s (%s)", accent, sys.DE, sys.SessionType),
+		"os":       field(accent, "OS", sys.DistroName),
+		"kernel":   field(accent, "Kernel", sys.Kernel),
+		"cpu":      field(accent, "CPU", sys.CPU),
+		"memory":   field(accent, "RAM", sys.Memory),
+		"localip":  field(accent, "IP", sys.LocalIP),
+		"uptime":   field(accent, "Uptime", sys.Uptime),
+		"shell":    field(accent, "Shell", sys.Shell),
+		"terminal": field(accent, "Terminal", sys.Terminal),
+		"battery":  fmt.Sprintf("%sBattery:\x1b[0m %d%% [%s]", accent, sys.Battery, sys.BatteryState),
+		"de":       fmt.Sprintf("%sDE:\x1b[0m %s (%s)", accent, sys.DE, sys.SessionType),
 	}
 
 	lines := []string{
