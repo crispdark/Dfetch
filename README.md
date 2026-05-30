@@ -25,9 +25,8 @@ Currently no official package for any platform is provided. You can either build
 //------------------------
 
 // ASCII color
-accentcolor: default
 asciicolor: default
-
+accentcolor: default
 // Available colors:
 // black, red, green, yellow, blue,
 // magenta, cyan, white,
@@ -49,6 +48,7 @@ localip
 // shell
 // de
 // battery
+// terminal
 ```
 
 ## Supported distros

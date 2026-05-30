@@ -1,7 +1,7 @@
 package output
 
 import (
-	"dfetch/internal/model"
+	"dfetch/internal/sysinfo"
 	"fmt"
 	"regexp"
 	"strings"
@@ -13,7 +13,7 @@ func visibleLen(s string) int {
 	return len(ansiRegex.ReplaceAllString(s, ""))
 }
 
-func BuildInfoLines(sys model.SystemInfo, configLines []string, accent string) []string {
+func BuildInfoLines(sys sysinfo.SystemInfo, configLines []string, accent string) []string {
 	info := map[string]string{
 		"os":       field(accent, "OS", sys.DistroName),
 		"kernel":   field(accent, "Kernel", sys.Kernel),

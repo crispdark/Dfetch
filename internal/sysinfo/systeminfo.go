@@ -1,8 +1,4 @@
-package model
-
-import (
-	sysinfo "dfetch/internal/sysinfo"
-)
+package sysinfo
 
 type SystemInfo struct {
 	DistroName   string
@@ -26,39 +22,39 @@ type SystemInfo struct {
 func CollectSystemInfo(enabledModules []string) SystemInfo {
 	var sys SystemInfo
 
-	sys.DistroName, sys.ID = sysinfo.Distro()
-	sys.Username = sysinfo.Username()
-	sys.Hostname = sysinfo.Hostname()
+	sys.DistroName, sys.ID = Distro()
+	sys.Username = Username()
+	sys.Hostname = Hostname()
 
 	for _, module := range enabledModules {
 		switch module {
 
 		case "kernel":
-			sys.Kernel = sysinfo.Kernel()
+			sys.Kernel = Kernel()
 
 		case "cpu":
-			sys.CPU = sysinfo.Cpu()
+			sys.CPU = Cpu()
 
 		case "memory":
-			sys.Memory = sysinfo.Ram()
+			sys.Memory = Ram()
 
 		case "localip":
-			sys.LocalIP = sysinfo.LocalIP()
+			sys.LocalIP = LocalIP()
 
 		case "uptime":
-			sys.Uptime = sysinfo.Uptime()
+			sys.Uptime = Uptime()
 
 		case "battery":
-			sys.Battery, sys.BatteryState = sysinfo.Battery()
+			sys.Battery, sys.BatteryState = Battery()
 
 		case "de":
-			sys.DE, sys.SessionType = sysinfo.DesktopEnvironment()
+			sys.DE, sys.SessionType = DesktopEnvironment()
 
 		case "shell":
-			sys.Shell = sysinfo.Shell()
+			sys.Shell = Shell()
 
 		case "terminal":
-			sys.Terminal = sysinfo.Terminal()
+			sys.Terminal = Terminal()
 		}
 	}
 

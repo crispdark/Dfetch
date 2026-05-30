@@ -2,8 +2,8 @@ package main
 
 import (
 	"dfetch/internal/config"
-	"dfetch/internal/model"
 	"dfetch/internal/output"
+	"dfetch/internal/sysinfo"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 	enabledModules, asciicolor, accentcolor := config.ReadConfig()
 
 	// Collect the users system info
-	sys := model.CollectSystemInfo(enabledModules)
+	sys := sysinfo.CollectSystemInfo(enabledModules)
 
 	// Load and format the ascii art
 	asciiLines, asciicolor := output.LoadASCII(
