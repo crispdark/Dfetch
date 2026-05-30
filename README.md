@@ -1,6 +1,6 @@
 # Dfetch
 
-A minimal and practical system information tool focused on clean, compact output and fast startup times. It is designed to provide useful system information while being lightweight enough to launch instantly with your terminal.
+A minimal and practical system information tool focused on clean, easy to understand output and fast startup times. It is designed to provide useful system information while being lightweight enough to launch instantly with your terminal.
 
 ![Dfetch output example](image/output_example.png)
 
@@ -43,15 +43,15 @@ uptime
 cpu
 memory
 localip
-// shell
-// de
+shell
+de
 // battery
-// terminal
+terminal
 
 // ------------------------
 // Options
 
-// Ascii size can be either 'big', 'default' or 'small' anything else will make it small.
+// Ascii size can be either 'big', 'default' or 'small'. Default is big.
 asciisize: default
 ```
 
