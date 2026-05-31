@@ -111,8 +111,8 @@ func CreateConfigFile() error {
 				"terminal\n\n" +
 				"// ------------------------\n" +
 				"// Options\n\n" +
-				"// Ascii size can be either 'big', 'default' or 'small'. Default is big.\n" +
-				"asciisize: default\n",
+				"asciisize: default\n" +
+				"// Ascii size can be either 'big', 'default' or 'small'. Default is big.\n",
 		)
 
 		err = os.WriteFile(configFile, []byte(config.String()), 0600)
