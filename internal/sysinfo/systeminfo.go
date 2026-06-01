@@ -1,22 +1,21 @@
 package sysinfo
 
 type SystemInfo struct {
-	DistroName   string
-	ID           string
-	Kernel       string
-	CPU          string
-	Memory       string
-	Username     string
-	Hostname     string
-	LocalIP      string
-	Uptime       string
-	Battery      int
-	BatteryState string
-	DE           string
-	SessionType  string
-	Shell        string
-	Terminal     string
-	colorterm    string
+	DistroName  string
+	ID          string
+	Kernel      string
+	CPU         string
+	Memory      string
+	Username    string
+	Hostname    string
+	LocalIP     string
+	Uptime      string
+	Battery     string
+	DE          string
+	SessionType string
+	Shell       string
+	Terminal    string
+	colorterm   string
 }
 
 func CollectSystemInfo(enabledModules []string) SystemInfo {
@@ -45,7 +44,7 @@ func CollectSystemInfo(enabledModules []string) SystemInfo {
 			sys.Uptime = Uptime()
 
 		case "battery":
-			sys.Battery, sys.BatteryState = Battery()
+			sys.Battery = Battery()
 
 		case "de":
 			sys.DE, sys.SessionType = DesktopEnvironment()

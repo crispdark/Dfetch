@@ -1,11 +1,39 @@
 package sysinfo
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
 )
+
+func Battery() string {
+	batPath, err := findBattery()
+	if err != nil {
+		return "unknown"
+	}
+
+	present, err := readInt(filepath.Join(batPath, "present"))
+	if err != nil || present != 1 {
+		return "No battery present"
+	}
+
+	capacity, err := readInt(filepath.Join(batPath, "capacity"))
+	if err != nil {
+		return "No battery present"
+	}
+
+	status, err := readString(filepath.Join(batPath, "status"))
+	if err != nil {
+		status = "unknown"
+	}
+
+	if status == "unknown" {
+		return fmt.Sprintf("%d%%", capacity)
+	}
+	return fmt.Sprintf("%d%% [%s]", capacity, status)
+}
 
 func findBattery() (string, error) {
 	const base = "/sys/class/power_supply"
@@ -47,28 +75,4 @@ func readString(path string) (string, error) {
 	}
 
 	return strings.TrimSpace(string(b)), nil
-}
-
-func Battery() (int, string) {
-	batPath, err := findBattery()
-	if err != nil {
-		return 0, "unknown"
-	}
-
-	present, err := readInt(filepath.Join(batPath, "present"))
-	if err != nil || present != 1 {
-		return 0, "unknown"
-	}
-
-	capacity, err := readInt(filepath.Join(batPath, "capacity"))
-	if err != nil {
-		return 0, "unknown"
-	}
-
-	status, err := readString(filepath.Join(batPath, "status"))
-	if err != nil {
-		status = "unknown"
-	}
-
-	return capacity, status
 }

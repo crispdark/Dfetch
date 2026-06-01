@@ -23,7 +23,7 @@ func BuildInfoLines(sys sysinfo.SystemInfo, configLines []string, accent string)
 		"uptime":   field(accent, "Uptime", sys.Uptime),
 		"shell":    field(accent, "Shell", sys.Shell),
 		"terminal": field(accent, "Terminal", sys.Terminal),
-		"battery":  fmt.Sprintf("%sBattery:\x1b[0m %d%% [%s]", accent, sys.Battery, sys.BatteryState),
+		"battery":  field(accent, "Battery", sys.Battery),
 		"de":       fmt.Sprintf("%sDE:\x1b[0m %s (%s)", accent, sys.DE, sys.SessionType),
 	}
 
