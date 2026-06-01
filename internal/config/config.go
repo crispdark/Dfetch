@@ -131,7 +131,9 @@ func CreateConfigFile() error {
 				"// ------------------------\n" +
 				"// Options\n\n" +
 				"asciisize: default\n" +
-				"// Ascii size can be either 'big', 'default' or 'small'. Default is big.\n",
+				"// Ascii size can be either 'big', 'default' or 'small'. Default is big.\n\n" +
+				"customascii: default\n" +
+				"// Set your own custom ascii logo by providing a path to it.",
 		)
 
 		if err := os.WriteFile(path, []byte(config.String()), 0600); err != nil {

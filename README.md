@@ -53,6 +53,9 @@ terminal
 
 asciisize: default
 // Ascii size can be either 'big', 'default' or 'small'. Default is big.
+
+customascii: default
+// Set your own custom ascii logo by providing a path to it.
 ```
 
 ## Supported distros

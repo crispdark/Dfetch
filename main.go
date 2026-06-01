@@ -24,6 +24,7 @@ func main() {
 		sys.ID,
 		cfg.AsciiColor,
 		cfg.AsciiSize,
+		cfg.CustomAscii,
 	)
 
 	accentColor := cfg.AccentColor
