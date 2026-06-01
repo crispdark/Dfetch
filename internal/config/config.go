@@ -7,29 +7,42 @@ import (
 	"strings"
 )
 
-func ReadConfig() ([]string, string, string, string) {
-	home, _ := os.UserHomeDir()
-	configpath := filepath.Join(home, ".config", "dfetch", "dfetch.conf")
+type Config struct {
+	EnabledModules []string
+	AsciiColor     string
+	AccentColor    string
+	AsciiSize      string
+	CustomAscii    string
+}
 
-	if _, err := os.Stat(configpath); os.IsNotExist(err) {
-		err = CreateConfigFile()
-		if err != nil {
-			return nil, "", "", ""
+func configPath() (string, error) {
+	configDir, err := os.UserConfigDir()
+	if err != nil {
+		return "", err
+	}
+
+	return filepath.Join(configDir, "dfetch", "dfetch.conf"), nil
+}
+
+func ReadConfig() (*Config, error) {
+	path, err := configPath()
+	if err != nil {
+		return nil, err
+	}
+
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		if err := CreateConfigFile(); err != nil {
+			return nil, err
 		}
 	}
 
-	file, err := os.Open(configpath)
+	file, err := os.Open(path)
 	if err != nil {
-		return nil, "", "", ""
+		return nil, err
 	}
 	defer file.Close()
 
-	var enabledmodules []string
-
-	var asciicolor string
-	var accentcolor string
-
-	var asciisize string
+	cfg := &Config{}
 
 	scanner := bufio.NewScanner(file)
 
@@ -43,46 +56,52 @@ func ReadConfig() ([]string, string, string, string) {
 
 		switch {
 		case strings.HasPrefix(line, "asciicolor:"):
-			asciicolor = strings.TrimSpace(strings.TrimPrefix(line, "asciicolor:"))
-			continue
-		case strings.HasPrefix(line, "accentcolor:"):
-			accentcolor = strings.TrimSpace(strings.TrimPrefix(line, "accentcolor:"))
-			continue
-		case strings.HasPrefix(line, "asciisize:"):
-			asciisize = strings.TrimSpace(strings.TrimPrefix(line, "asciisize:"))
-			continue
-		}
+			cfg.AsciiColor = strings.TrimSpace(
+				strings.TrimPrefix(line, "asciicolor:"),
+			)
 
-		enabledmodules = append(enabledmodules, line)
+		case strings.HasPrefix(line, "accentcolor:"):
+			cfg.AccentColor = strings.TrimSpace(
+				strings.TrimPrefix(line, "accentcolor:"),
+			)
+
+		case strings.HasPrefix(line, "asciisize:"):
+			cfg.AsciiSize = strings.TrimSpace(
+				strings.TrimPrefix(line, "asciisize:"),
+			)
+
+		case strings.HasPrefix(line, "customascii:"):
+			cfg.CustomAscii = strings.TrimSpace(
+				strings.TrimPrefix(line, "customascii:"),
+			)
+
+		default:
+			cfg.EnabledModules = append(cfg.EnabledModules, line)
+		}
 	}
 
 	if err := scanner.Err(); err != nil {
-		return nil, "", "", ""
+		return nil, err
 	}
 
-	return enabledmodules, asciicolor, accentcolor, asciisize
+	return cfg, nil
 }
 
 func CreateConfigFile() error {
-
-	// Create config file / directory if doesnt exist
-	configDir, err := os.UserConfigDir()
+	path, err := configPath()
 	if err != nil {
 		return err
 	}
 
-	appConfigDir := filepath.Join(configDir, "dfetch")
+	configDir := filepath.Dir(path)
 
-	if err := os.MkdirAll(appConfigDir, 0700); err != nil {
+	if err := os.MkdirAll(configDir, 0700); err != nil {
 		return err
 	}
 
-	configFile := filepath.Join(appConfigDir, "dfetch.conf")
-	if _, err := os.Stat(configFile); os.IsNotExist(err) {
-
+	if _, err := os.Stat(path); os.IsNotExist(err) {
 		var config strings.Builder
 
-		// Default config file
 		config.WriteString(
 			"// Lines starting with `//` are comments and are ignored by Dfetch.\n" +
 				"// In the System Information section you can change what info is displayed and in what order.\n\n" +
@@ -115,8 +134,7 @@ func CreateConfigFile() error {
 				"// Ascii size can be either 'big', 'default' or 'small'. Default is big.\n",
 		)
 
-		err = os.WriteFile(configFile, []byte(config.String()), 0600)
-		if err != nil {
+		if err := os.WriteFile(path, []byte(config.String()), 0600); err != nil {
 			return err
 		}
 	}

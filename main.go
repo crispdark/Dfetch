@@ -1,42 +1,47 @@
 package main
 
 import (
+	"log"
+
 	"dfetch/internal/config"
 	"dfetch/internal/output"
 	"dfetch/internal/sysinfo"
 )
 
 func main() {
-
 	// Read or create the config file
-	enabledModules, asciicolor, accentcolor, asciisize := config.ReadConfig()
-
-	// Collect necessary system info
-	sys := sysinfo.CollectSystemInfo(enabledModules)
-
-	// Prepare the ASCII art
-	asciiLines, asciicolor := output.LoadASCII(
-		output.LogoFS,
-		sys.ID,
-		asciicolor,
-		asciisize,
-	)
-
-	if accentcolor == "" || accentcolor == "default" {
-		accentcolor = asciicolor
+	cfg, err := config.ReadConfig()
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	// Get the ANSI codes correspondig to the colors
-	asciicolor = config.GetColorCode(asciicolor)
-	accentcolor = config.GetColorCode(accentcolor)
+	// Collect necessary system info
+	sys := sysinfo.CollectSystemInfo(cfg.EnabledModules)
+
+	// Prepare the ASCII art
+	asciiLines, asciiColor := output.LoadASCII(
+		output.LogoFS,
+		sys.ID,
+		cfg.AsciiColor,
+		cfg.AsciiSize,
+	)
+
+	accentColor := cfg.AccentColor
+	if accentColor == "" || accentColor == "default" {
+		accentColor = asciiColor
+	}
+
+	// Get the ANSI codes corresponding to the colors
+	asciiColor = config.GetColorCode(asciiColor)
+	accentColor = config.GetColorCode(accentColor)
 
 	// Build the info lines
 	infoLines := output.BuildInfoLines(
 		sys,
-		enabledModules,
-		accentcolor,
+		cfg.EnabledModules,
+		accentColor,
 	)
 
 	// Put everything together and print it
-	output.PrintOutput(asciiLines, infoLines, asciicolor)
+	output.PrintOutput(asciiLines, infoLines, asciiColor)
 }
