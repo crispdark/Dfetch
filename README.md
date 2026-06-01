@@ -51,8 +51,8 @@ terminal
 // ------------------------
 // Options
 
-// Ascii size can be either 'big', 'default' or 'small'. Default is big.
 asciisize: default
+// Ascii size can be either 'big', 'default' or 'small'. Default is big.
 ```
 
 ## Supported distros
