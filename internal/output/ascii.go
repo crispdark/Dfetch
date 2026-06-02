@@ -34,7 +34,11 @@ func LoadASCII(fs embed.FS, distroID, asciicolor, asciisize, customascii string)
 
 		// Fallback to Linux logo
 		if _, err := fs.Open(file); err != nil {
-			file = "logo/linux.txt"
+			if asciisize == "small" {
+				file = "logo/linux_small.txt"
+			} else {
+				file = "logo/linux_big.txt"
+			}
 		}
 
 		f, err := fs.Open(file)
