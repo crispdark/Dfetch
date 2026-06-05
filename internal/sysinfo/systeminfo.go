@@ -15,6 +15,7 @@ type SystemInfo struct {
 	Shell      string
 	Terminal   string
 	colorterm  string
+	Disk       string
 }
 
 func CollectSystemInfo(enabledModules []string) SystemInfo {
@@ -53,6 +54,9 @@ func CollectSystemInfo(enabledModules []string) SystemInfo {
 
 		case "terminal":
 			sys.Terminal = Terminal()
+
+		case "disk":
+			sys.Disk = Disk()
 		}
 	}
 

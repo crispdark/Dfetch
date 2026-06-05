@@ -127,6 +127,7 @@ func CreateConfigFile() error {
 				"cpu\n" +
 				"memory\n" +
 				"// battery\n" +
+				"disk\n" +
 				"localip\n\n" +
 				"// ------------------------\n" +
 				"// Options\n\n" +

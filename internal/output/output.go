@@ -25,6 +25,7 @@ func BuildInfoLines(sys sysinfo.SystemInfo, configLines []string, accent string)
 		"terminal": field(accent, "Terminal", sys.Terminal),
 		"battery":  field(accent, "Battery", sys.Battery),
 		"de":       field(accent, "DE", sys.DE),
+		"disk":     field(accent, "Disk", sys.Disk),
 	}
 
 	lines := []string{
