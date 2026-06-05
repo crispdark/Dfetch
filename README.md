@@ -40,13 +40,14 @@ accentcolor: default
 os
 kernel
 uptime
-cpu
-memory
-localip
 shell
 de
-// battery
 terminal
+cpu
+memory
+// battery
+disk
+localip
 
 // ------------------------
 // Options
