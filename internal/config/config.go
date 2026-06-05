@@ -113,7 +113,7 @@ func ReadConfig() (*Config, error) {
 		return nil, err
 	}
 
-	// Error if modules block was never closed
+	// Error if a block was never closed
 	if inModules {
 		return nil, fmt.Errorf("unterminated block in config")
 	}
@@ -140,6 +140,7 @@ func CreateConfigFile() error {
 		config.WriteString(
 			"// Lines starting with `//` are comments and are ignored by Dfetch.\n" +
 				"// In the modules section you can change what info is displayed and in what order.\n\n" +
+				"// 'Emptyline' module can be used to get an empty line in between modules\n" +
 				"modules {\n" +
 				"	userinfo\n" +
 				"	os\n" +

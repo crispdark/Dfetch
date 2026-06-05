@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"dfetch/internal/config"
+	"dfetch/internal/modules"
 	"dfetch/internal/output"
-	"dfetch/internal/sysinfo"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 	}
 
 	// Collect necessary system info
-	sys := sysinfo.CollectSystemInfo(cfg.EnabledModules)
+	sys := modules.CollectSystemInfo(cfg.EnabledModules)
 
 	// Prepare the ASCII art
 	asciiLines, asciiColor := output.LoadASCII(

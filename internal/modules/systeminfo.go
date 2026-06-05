@@ -1,6 +1,8 @@
-package sysinfo
+package modules
 
-type SystemInfo struct {
+import "fmt"
+
+type Modules struct {
 	DistroName string
 	ID         string
 	Kernel     string
@@ -17,10 +19,11 @@ type SystemInfo struct {
 	Disk       string
 	Time       string
 	Date       string
+	Emptyline  string
 }
 
-func CollectSystemInfo(enabledModules []string) SystemInfo {
-	var sys SystemInfo
+func CollectSystemInfo(enabledModules []string) Modules {
+	var sys Modules
 
 	sys.DistroName, sys.ID = Distro()
 
@@ -65,6 +68,9 @@ func CollectSystemInfo(enabledModules []string) SystemInfo {
 
 		case "date":
 			sys.Date = Date()
+
+		case "emptyline":
+			sys.Emptyline = fmt.Sprintf(" ")
 		}
 	}
 

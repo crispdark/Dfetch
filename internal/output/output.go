@@ -1,7 +1,7 @@
 package output
 
 import (
-	"dfetch/internal/sysinfo"
+	"dfetch/internal/modules"
 	"fmt"
 	"regexp"
 	"strings"
@@ -13,22 +13,23 @@ func visibleLen(s string) int {
 	return len(ansiRegex.ReplaceAllString(s, ""))
 }
 
-func BuildInfoLines(sys sysinfo.SystemInfo, configLines []string, accent string) []string {
+func BuildInfoLines(sys modules.Modules, configLines []string, accent string) []string {
 	info := map[string]string{
-		"userinfo": fmt.Sprintf("%s%s", accent, sys.Userinfo),
-		"os":       field(accent, "OS", sys.DistroName),
-		"kernel":   field(accent, "Kernel", sys.Kernel),
-		"cpu":      field(accent, "CPU", sys.CPU),
-		"memory":   field(accent, "RAM", sys.Memory),
-		"localip":  field(accent, "IP", sys.LocalIP),
-		"uptime":   field(accent, "Uptime", sys.Uptime),
-		"shell":    field(accent, "Shell", sys.Shell),
-		"terminal": field(accent, "Terminal", sys.Terminal),
-		"battery":  field(accent, "Battery", sys.Battery),
-		"de":       field(accent, "DE", sys.DE),
-		"disk":     field(accent, "Disk", sys.Disk),
-		"time":     field(accent, "Time", sys.Time),
-		"date":     field(accent, "Date", sys.Date),
+		"userinfo":  fmt.Sprintf("%s%s", accent, sys.Userinfo),
+		"os":        field(accent, "OS", sys.DistroName),
+		"kernel":    field(accent, "Kernel", sys.Kernel),
+		"cpu":       field(accent, "CPU", sys.CPU),
+		"memory":    field(accent, "RAM", sys.Memory),
+		"localip":   field(accent, "IP", sys.LocalIP),
+		"uptime":    field(accent, "Uptime", sys.Uptime),
+		"shell":     field(accent, "Shell", sys.Shell),
+		"terminal":  field(accent, "Terminal", sys.Terminal),
+		"battery":   field(accent, "Battery", sys.Battery),
+		"de":        field(accent, "DE", sys.DE),
+		"disk":      field(accent, "Disk", sys.Disk),
+		"time":      field(accent, "Time", sys.Time),
+		"date":      field(accent, "Date", sys.Date),
+		"emptyline": fmt.Sprintf(" "),
 	}
 
 	lines := []string{}
