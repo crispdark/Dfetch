@@ -50,34 +50,33 @@ func ReadConfig() (*Config, error) {
 		line := strings.TrimSpace(scanner.Text())
 
 		// Skip empty lines and comments
-		if line == "" || strings.HasPrefix(line, "//") {
+		if idx := strings.Index(line, "//"); idx != -1 {
+			line = strings.TrimSpace(line[:idx])
+		}
+
+		if line == "" {
 			continue
 		}
 
-		switch {
-		case strings.HasPrefix(line, "asciicolor:"):
-			cfg.AsciiColor = strings.TrimSpace(
-				strings.TrimPrefix(line, "asciicolor:"),
-			)
+		if idx := strings.Index(line, ":"); idx != -1 {
+			key := strings.ToLower(strings.TrimSpace(line[:idx]))
+			value := strings.TrimSpace(line[idx+1:])
 
-		case strings.HasPrefix(line, "accentcolor:"):
-			cfg.AccentColor = strings.TrimSpace(
-				strings.TrimPrefix(line, "accentcolor:"),
-			)
+			switch key {
+			case "asciicolor":
+				cfg.AsciiColor = value
+			case "accentcolor":
+				cfg.AccentColor = value
+			case "asciisize":
+				cfg.AsciiSize = value
+			case "customascii":
+				cfg.CustomAscii = value
+			}
 
-		case strings.HasPrefix(line, "asciisize:"):
-			cfg.AsciiSize = strings.TrimSpace(
-				strings.TrimPrefix(line, "asciisize:"),
-			)
-
-		case strings.HasPrefix(line, "customascii:"):
-			cfg.CustomAscii = strings.TrimSpace(
-				strings.TrimPrefix(line, "customascii:"),
-			)
-
-		default:
-			cfg.EnabledModules = append(cfg.EnabledModules, strings.ToLower(line))
+			continue
 		}
+
+		cfg.EnabledModules = append(cfg.EnabledModules, strings.ToLower(line))
 	}
 
 	if err := scanner.Err(); err != nil {
@@ -118,8 +117,7 @@ func CreateConfigFile() error {
 				"// bright_cyan, bright_white\n\n" +
 				"// ------------------------\n" +
 				"// System info modules\n\n" +
-				"userinfo\n" +
-				"// Username and hostname show above the info\n\n" +
+				"userinfo // Username and hostname show above the info\n\n" +
 				"os\n" +
 				"kernel\n" +
 				"uptime\n" +

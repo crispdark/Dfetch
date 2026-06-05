@@ -2,11 +2,21 @@
 
 A clean and practical system information tool focused on clean, easy to understand output and fast startup times. It is designed to provide useful system information while being lightweight enough to launch instantly with your terminal.
 
-![Dfetch output example](image/output_example.png)
+<table>
+  <tr>
+    <td><img src="image/default_output_example_pop.png" alt="Pop!_OS example" width="100%"></td>
+    <td><img src="image/default_output_example_debian.png" alt="Debian example" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="image/default_output_example_arch.png" alt="Arch example" width="100%"></td>
+    <td><img src="image/default_output_example_fedora.png" alt="Fedora example" width="100%"></td>
+  </tr>
+</table>
 
 ## Why use this?
 
 Dfetch does not try to compete with heavily customizable alternatives like [Neofetch](https://github.com/dylanaraps/neofetch) or [Fastfetch](https://github.com/fastfetch-cli/fastfetch). The project exists mainly as a fun project for myself, while still being useful for those who prefer clean, easy to configure tools with good defaults.
+
 
 ## Installation
 
@@ -37,6 +47,9 @@ accentcolor: default
 // ------------------------
 // System info modules
 
+userinfo
+// Username and hostname show above the info
+
 os
 kernel
 uptime
@@ -46,8 +59,8 @@ terminal
 cpu
 memory
 disk
-localip
 // battery
+localip
 // time
 // date
 
