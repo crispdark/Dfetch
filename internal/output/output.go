@@ -50,6 +50,7 @@ func PrintOutput(asciiLines, infoLines []string, asciiColor string) {
 	width := getMaxWidth(asciiLines)
 
 	total := max(len(asciiLines), len(infoLines))
+	fmt.Printf("\n\n\n\n\n\n\n\n")
 	for i := 0; i < total; i++ {
 		var left, right string
 
@@ -62,6 +63,7 @@ func PrintOutput(asciiLines, infoLines []string, asciiColor string) {
 
 		fmt.Printf("%s%-*s\x1b[0m %s\n", asciiColor, width, left, right)
 	}
+	fmt.Printf("\n\n\n\n\n\n\n\n")
 }
 
 func getMaxWidth(lines []string) int {
