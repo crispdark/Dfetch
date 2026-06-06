@@ -30,6 +30,7 @@ Currently no official package for any platform is provided. You can either build
 // Lines starting with `//` are comments and are ignored by Dfetch.
 // In the modules section you can change what info is displayed and in what order.
 
+// 'Emptyline' module can be used to get an empty line in between modules
 modules {
 	userinfo
 	os

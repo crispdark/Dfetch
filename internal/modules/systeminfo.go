@@ -33,6 +33,9 @@ func CollectSystemInfo(enabledModules []string) Modules {
 		case "userinfo":
 			sys.Userinfo = Userinfo()
 
+		case "os":
+			continue
+
 		case "kernel":
 			sys.Kernel = Kernel()
 
@@ -70,8 +73,12 @@ func CollectSystemInfo(enabledModules []string) Modules {
 			sys.Date = Date()
 
 		case "emptyline":
-			sys.Emptyline = fmt.Sprintf(" ")
+			sys.Emptyline = ""
+
+		default:
+			fmt.Printf("Module '%s' defined in config does not exist\n", module)
 		}
+
 	}
 
 	return sys

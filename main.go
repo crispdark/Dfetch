@@ -1,11 +1,10 @@
 package main
 
 import (
-	"log"
-
 	"dfetch/internal/config"
 	"dfetch/internal/modules"
 	"dfetch/internal/output"
+	"log"
 )
 
 func main() {
@@ -27,20 +26,19 @@ func main() {
 		cfg.CustomAscii,
 	)
 
-	accentColor := cfg.AccentColor
-	if accentColor == "" || accentColor == "default" {
-		accentColor = asciiColor
+	if cfg.AccentColor == "" || cfg.AccentColor == "default" {
+		cfg.AccentColor = asciiColor
 	}
 
 	// Get the ANSI codes corresponding to the colors
 	asciiColor = config.GetColorCode(asciiColor)
-	accentColor = config.GetColorCode(accentColor)
+	cfg.AccentColor = config.GetColorCode(cfg.AccentColor)
 
 	// Build the info lines
 	infoLines := output.BuildInfoLines(
 		sys,
 		cfg.EnabledModules,
-		accentColor,
+		cfg.AccentColor,
 	)
 
 	// Put everything together and print it
