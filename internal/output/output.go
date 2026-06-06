@@ -5,12 +5,14 @@ import (
 	"fmt"
 	"regexp"
 	"strings"
+	"unicode/utf8"
 )
 
 var ansiRegex = regexp.MustCompile(`\x1b\[[0-9;]*m`)
 
 func visibleLen(s string) int {
-	return len(ansiRegex.ReplaceAllString(s, ""))
+	clean := ansiRegex.ReplaceAllString(s, "")
+	return utf8.RuneCountInString(clean)
 }
 
 func BuildInfoLines(sys modules.Modules, configLines []string, accent string) []string {
