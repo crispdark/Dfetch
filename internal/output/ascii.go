@@ -8,12 +8,12 @@ import (
 	"strings"
 )
 
-func LoadASCII(fs embed.FS, distroID, asciicolor, asciisize, customascii string) ([]string, string) {
+func LoadASCII(fs embed.FS, distroID, asciisize, customascii string) ([]string, string) {
 	var scanner *bufio.Scanner
 	var closer func()
 
-	// Try custom ascii first
-	if customascii != "" && customascii != strings.ToLower("default") {
+	// custom file
+	if customascii != "" && customascii != "default" {
 		if f, err := os.Open(customascii); err == nil {
 			scanner = bufio.NewScanner(f)
 			closer = func() { f.Close() }
@@ -22,7 +22,7 @@ func LoadASCII(fs embed.FS, distroID, asciicolor, asciisize, customascii string)
 		}
 	}
 
-	// Fallback to default distro logo
+	// embedded fallback
 	if scanner == nil {
 		var file string
 
@@ -32,14 +32,17 @@ func LoadASCII(fs embed.FS, distroID, asciicolor, asciisize, customascii string)
 			file = fmt.Sprintf("logo/%s_big.txt", strings.ToLower(distroID))
 		}
 
-		// Fallback to Linux logo
 		if _, err := fs.Open(file); err != nil {
-			file = "logo/linux.txt"
+			if asciisize == "small" {
+				file = "logo/linux_small.txt"
+			} else {
+				file = "logo/linux_big.txt"
+			}
 		}
 
 		f, err := fs.Open(file)
 		if err != nil {
-			return nil, asciicolor
+			return nil, ""
 		}
 
 		scanner = bufio.NewScanner(f)
@@ -49,26 +52,17 @@ func LoadASCII(fs embed.FS, distroID, asciicolor, asciisize, customascii string)
 	defer closer()
 
 	var lines []string
+	var accentColor string
 
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		switch {
-		case strings.HasPrefix(line, "asciicolor:"):
-			if asciicolor == "" || asciicolor == "default" {
-				asciicolor = strings.TrimSpace(
-					strings.TrimPrefix(line, "asciicolor:"),
-				)
-			}
+		if strings.HasPrefix(strings.ToLower(line), "accentcolor:") {
+			accentColor = strings.TrimSpace(strings.TrimPrefix(line, "accentcolor:"))
 			continue
 		}
-
 		lines = append(lines, line)
 	}
 
-	if err := scanner.Err(); err != nil {
-		return nil, asciicolor
-	}
-
-	return lines, asciicolor
+	return lines, accentColor
 }

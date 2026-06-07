@@ -1,17 +1,17 @@
 asciicolor: bright_blue
-       :-------------------::
-     :-----------/shhOHbmp---:\
-   /-----------omMMMNNNMMD  ---:
-  :-----------sMMMMNMNMP.    ---:
- :-----------:MMMdP-------    ---\
-,------------:MMMd--------    ---:
-:------------:MMMd-------    .---:
-:----    oNMMMMMMMMMNho     .----:
-:--     .+shhhMMMmhhy++   .------/
-:-    -------:MMMd--------------:
-:-   --------/MMMd-------------;
-:-    ------/hMMMy------------:
-:-- :dMNdhhdNMMNo------------;
-:---:sdNMMMMNds:------------:
-:------:://:-------------::
-:----------------------:
+${blue}       :-------------------::
+${blue}     :-----------${white}/shhOHbmp${blue}---:\
+${blue}   /-----------${white}omMMMNNNMMD${blue}  ---:
+${blue}  :-----------${white}sMMMMNMNMP.${blue}    ---:
+${blue} :-----------${white}:MMMdP${blue}-------    ---\
+${blue},------------${white}:MMMd${blue}--------    ---:
+${blue}:------------${white}:MMMd${blue}-------    .---:
+${blue}:----    ${white}oNMMMMMMMMMNho${blue}     .----:
+${blue}:--     ${white}.+shhhMMMmhhy++${blue}   .------/
+${blue}:-    -------${white}:MMMd${blue}--------------:
+${blue}:-   --------${white}/MMMd${blue}-------------;
+${blue}:-    ------${white}/hMMMy${blue}------------:
+${blue}:-- ${white}:dMNdhhdNMMNo${blue}------------;
+${blue}:---${white}:sdNMMMMNds:${blue}------------:
+${blue}:------${white}:://:${blue}-------------::
+${blue}:----------------------:

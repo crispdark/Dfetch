@@ -1,16 +1,16 @@
-asciicolor: bright_green
-MMMMMMMMMMMMMMMMMMMMMMMMMmds+.
-MMm                       ymNMd+
-MMd      /++                -sNMd:
-MMNso\   dMM    `.::-. .-::.   hMN:
-ddddMMh  dMM   :hNMNMNhNMNMNh:  NMm
-    NMm  dMM   NMN/-+MMM+-/NMN  dMM
-    NMm  dMM   MMm   MMM   dMM  dMM
-    NMm  dMM   MMm   MMM   dMM  dMM
-    NMm  dMM   mmd   mmm   yMM  dMM
-    NMm  dMM.              ydm  dMM
-    hMM  +MMd/-------...-:sdds  dMM
-    -NMm  :hNMNNNmdddddddddy/   dMM
-    -dMNs                      dMM
-     \dMNmy+/:-------------:/yMMM
-       \ydNMMMMMMMMMMMMMMMMMMMMM
+${green}MMMMMMMMMMMMMMMMMMMMMMMMMmds+.
+${green}MMm                       ymNMd+
+${green}MMd      ${white}/++                ${green}-sNMd:
+${green}MMNso\   ${white}dMM    `.::-. .-::.${green}   hMN:
+${green}ddddMMh  ${white}dMM   :hNMNMNhNMNMNh:  ${green}NMm
+${green}    NMm  ${white}dMM   NMN/-+MMM+-/NMN  ${green}dMM
+${green}    NMm  ${white}dMM   MMm   MMM   dMM  ${green}dMM
+${green}    NMm  ${white}dMM   MMm   MMM   dMM  ${green}dMM
+${green}    NMm  ${white}dMM   mmd   mmm   yMM  ${green}dMM
+${green}    NMm  ${white}dMM.              ydm  ${green}dMM
+${green}    hMM  ${white}+MMd/-------...-:sdds  ${green}dMM
+${green}    -NMm  ${white}:hNMNNNmdddddddddy/   ${green}dMM
+${green}    -dMNs                      dMM
+${green}     \dMNmy+/:-------------:/yMMM
+${green}       \ydNMMMMMMMMMMMMMMMMMMMMM
+accentcolor: green

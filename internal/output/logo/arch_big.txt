@@ -1,19 +1,19 @@
-asciicolor: blue
-                  -`
-                 .o+`
-                `ooo/
-               `+oooo:
-              `+oooooo:
-              -+oooooo+:
-            `/:-:++oooo+:
-           `/++++/+++++++:
-          `/++++++++++++++:
-         `/+++o$2oooooooo$1\
-        ./$2ooosssso++osssss\
-       .oossssso-````/ossssss+`
-      -osssssso.      :ssssssso.
-     :osssssss/        osssso+++.
-    /ossssssss/        +ssssooo/-
-  `/ossssso+/:-        -:/+osssso+-
- `+sso+:-`                 `.-/+oso:
-`++:.                           `-/+/
+${blue}                  -`
+${blue}                 .o+`
+${blue}                `ooo/
+${blue}               `+oooo:
+${blue}              `+oooooo:
+${blue}              -+oooooo+:
+${blue}            `/:-:++oooo+:
+${blue}           `/++++/+++++++:
+${blue}          `/++++++++++++++:
+${blue}         `/+++o$2oooooooo$1\
+${blue}        ./$2ooosssso++osssss\
+${blue}       .oossssso-````/ossssss+`
+${blue}      -osssssso.      :ssssssso.
+${blue}     :osssssss/        osssso+++.
+${blue}    /ossssssss/        +ssssooo/-
+${blue}  `/ossssso+/:-        -:/+osssso+-
+${blue} `+sso+:-`                 `.-/+oso:
+${blue}`++:.                           `-/+/
+accentcolor: blue

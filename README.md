@@ -54,9 +54,6 @@ asciisize: default
 customascii: default
 // Set a custom ascii logo by providing a path to the txt file containing it.
 
-asciicolor: default
-// Color of ascii art
-
 accentcolor: default
 // Color used by the info labels
 
@@ -82,3 +79,47 @@ accentcolor: default
 - Pop! OS
 - Ubuntu
 ```
+
+## How to make a custom ascii art
+
+first put the ASCII art you want to use into a `txt` file. it should look something like:
+
+```
+MMMMMMMMMMMMMMMMMMMMMMMMMmds+.
+MMm                       ymNMd+
+MMd      /++                -sNMd:
+MMNso\   dMM    `.::-. .-::.   hMN:
+ddddMMh  dMM   :hNMNMNhNMNMNh:  NMm
+    NMm  dMM   NMN/-+MMM+-/NMN  dMM
+    NMm  dMM   MMm   MMM   dMM  dMM
+    NMm  dMM   MMm   MMM   dMM  dMM
+    NMm  dMM   mmd   mmm   yMM  dMM
+    NMm  dMM.              ydm  dMM
+    hMM  +MMd/-------...-:sdds  dMM
+    -NMm  :hNMNNNmdddddddddy/   dMM
+    -dMNs                      dMM
+     \dMNmy+/:-------------:/yMMM
+       \ydNMMMMMMMMMMMMMMMMMMMMM
+```
+
+Now where gonna give it color by adding color tags. For a list of supported colors look in the default config file.
+
+```
+${green}MMMMMMMMMMMMMMMMMMMMMMMMMmds+.
+${green}MMm                       ymNMd+
+${green}MMd      ${white}/++                ${green}-sNMd:
+${green}MMNso\   ${white}dMM    `.::-. .-::.${green}   hMN:
+${green}ddddMMh  ${white}dMM   :hNMNMNhNMNMNh:  ${green}NMm
+${green}    NMm  ${white}dMM   NMN/-+MMM+-/NMN  ${green}dMM
+${green}    NMm  ${white}dMM   MMm   MMM   dMM  ${green}dMM
+${green}    NMm  ${white}dMM   MMm   MMM   dMM  ${green}dMM
+${green}    NMm  ${white}dMM   mmd   mmm   yMM  ${green}dMM
+${green}    NMm  ${white}dMM.              ydm  ${green}dMM
+${green}    hMM  ${white}+MMd/-------...-:sdds  ${green}dMM
+${green}    -NMm  ${white}:hNMNNNmdddddddddy/   ${green}dMM
+${green}    -dMNs                      dMM
+${green}     \dMNmy+/:-------------:/yMMM
+${green}       \ydNMMMMMMMMMMMMMMMMMMMMM
+```
+
+last at the bottom of the file we will add an accentcolor `accentcolor: green`. This is the color given to the info module labels.

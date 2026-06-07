@@ -6,8 +6,8 @@ import (
 )
 
 // List of all supported colors
-func GetColorCode(asciicolor string) string {
-	switch strings.ToLower(asciicolor) {
+func GetColorCode(accentColor string) string {
+	switch strings.ToLower(accentColor) {
 	case "black":
 		return "\x1b[30m"
 	case "red":

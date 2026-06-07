@@ -1,0 +1,13 @@
+        ${black}#####
+       ${black}#######
+       ${black}##${white}O${black}#${white}O${black}##
+       ${black}#${yellow}#####${black}#
+     ${black}##${white}##${yellow}###${white}##${black}##
+    ${black}#${white}##########${black}##
+   ${black}#${white}############${black}##
+   ${black}#${white}############${black}###
+  ${yellow}##${black}#${white}###########${black}##${yellow}#
+${yellow}######${black}#${white}#######${black}#${yellow}######
+${yellow}#######${black}#${white}#####${black}#${yellow}#######
+  ${yellow}#####${black}#######${yellow}#####
+accentcolor: yellow

@@ -11,7 +11,6 @@ import (
 type Config struct {
 	EnabledModules []string
 
-	AsciiColor  string
 	AccentColor string
 	AsciiSize   string
 	CustomAscii string
@@ -49,7 +48,6 @@ func ReadConfig() (*Config, error) {
 	// Give option variables default values
 	cfg := &Config{
 		AsciiSize:   "default",
-		AsciiColor:  "default",
 		AccentColor: "default",
 		CustomAscii: "default",
 	}
@@ -91,8 +89,6 @@ func ReadConfig() (*Config, error) {
 			value := strings.ToLower(strings.TrimSpace(line[idx+1:]))
 
 			switch key {
-			case "asciicolor":
-				cfg.AsciiColor = value
 			case "accentcolor":
 				cfg.AccentColor = value
 			case "asciisize":
@@ -161,8 +157,6 @@ func CreateConfigFile() error {
 				"// Ascii size can be either 'big', 'default' or 'small'. Default is big.\n\n" +
 				"customascii: default\n" +
 				"// Set a custom ascii logo by providing a path to the txt file containing it.\n\n" +
-				"asciicolor: default\n" +
-				"// Color of ascii art\n\n" +
 				"accentcolor: default\n" +
 				"// Color used by the info labels\n\n" +
 				"// Available colors:\n" +

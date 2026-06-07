@@ -1,8 +1,8 @@
-asciicolor: blue
-      /\
-     /  \
-    /    \
-   /      \
-  /   __   \
- /   |  |   \
-/_-''    ''-_\
+${blue}      /\
+${blue}     /  \
+${blue}    /    \
+${blue}   /      \
+${blue}  /   __   \
+${blue} /   |  |   \
+${blue}/_-''    ''-_\
+accentcolor: blue

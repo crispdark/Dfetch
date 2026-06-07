@@ -1,8 +1,8 @@
-asciicolor: bright_magenta
-______
-\   _ \        __
- \ \ \ \      / /
-  \ \_\ \    / /
-   \  ___\  /_/
-    \ \
-     \_\  (_)
+${magenta}______
+${magenta}\   _ \        __
+${magenta} \ \ \ \      / /
+${magenta}  \ \_\ \    / /
+${magenta}   \  ___\  /_/
+${magenta}    \ \
+${magenta}     \_\  (_)
+accencolor: magenta

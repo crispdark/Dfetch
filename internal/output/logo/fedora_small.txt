@@ -1,9 +1,9 @@
-asciicolor: bright_blue
-        _-----_
-       |   __  |
-       |  |  '_'
-  .----|  |__
-.'  ___|   __|
-|  |   |  |
-|  '._.'  |
- '._____.'
+${bright_blue}        _-----_
+${bright_blue}       |   __  |
+${bright_blue}       |  |  '_'
+${bright_blue}  .----|  |__
+${bright_blue}.'  ___|   __|
+${bright_blue}|  |   |  |
+${bright_blue}|  '._.'  |
+${bright_blue} '._____.'
+accentcolor: blue

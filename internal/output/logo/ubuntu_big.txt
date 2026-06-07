@@ -1,21 +1,21 @@
-asciicolor: yellow
                              ....
-              .',:clooo:  :looooo:.
-           .;looooooooc  oooooooooo'
-        .;looooool:,''.  :ooooooooooc
-       ;looool;.         'oooooooooo,
-      ;clool'             cooooooc.  ,,
-         ...                .....  .:oo,
-  ;clol:,.                        .loooo'
- :ooooooooo,                        'ooool
-'ooooooooooo.                        loooo.
-'ooooooooool                         coooo.
- ,loooooooc.                        .loooo.
-   ,;;;'.                          ;ooooc
-       ...                         ,ooool.
-    .cooooc.              .',,'.  .cooo.
-      ;ooooo:.           ;oooooooc.  :l.
-       .coooooc,..      coooooooooo.
-         .:ooooooolc:. ooooooooooo'
-           .':loooooo;  ,oooooooooc
-               ..';::c'  ;loooo:'
+              ${red}.',:clooo:  ${yellow}.:looooo:.
+           ${red}.;looooooooc  ${yellow}.oooooooooo'
+        ${red}.;looooool:,''.  ${yellow}:ooooooooooc
+       ${red};looool;.         ${yellow}'oooooooooo,
+      ${red};clool'             ${yellow}.cooooooc.  ${red},,
+         ${red}...                ${yellow}......  ${red}.:oo,
+  ${yellow}.;clol:,.                        ${red}.loooo'
+ ${yellow}:ooooooooo,                        ${red}'ooool
+${yellow}'ooooooooooo.                        ${red}loooo.
+${yellow}'ooooooooool                         ${red}coooo.
+ ${yellow},loooooooc.                        ${red}.loooo.
+   ${yellow}.,;;;'.                          ${red};ooooc
+       ${red}...                         ${red},ooool.
+    ${red}.cooooc.              ${yellow}..',,'.  ${red}.cooo.
+      ${red};ooooo:.           ${yellow};oooooooc.  ${red}:l.
+       ${red}.coooooc,..      ${yellow}coooooooooo.
+         ${red}.:ooooooolc:. ${yellow}.ooooooooooo'
+           ${red}.':loooooo;  ${yellow},oooooooooc
+               ${red}..';::c'  ${yellow}.;loooo:'
+accentcolor: yellow

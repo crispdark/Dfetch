@@ -1,7 +1,12 @@
-asciicolor: yellow
- __    __
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  `--'  |
- \______/
+      ${red}..;,; ${yellow}.,;,.
+   ${red}.,lool: ${yellow}.ooooo,
+  ${red};oo;:    ${yellow}.coool.
+ ${yellow}....         ${yellow}'''${red},l;
+${yellow}:oooo,           ${red}'oo.
+${yellow}looooc           ${red}:oo'
+ ${yellow}'::'            ${red},oo:
+  ${red},.,       ${yellow}....${red}co,
+   ${red}lo:;.   ${yellow}:oooo;${red}.
+    ${red}':ooo; ${yellow}cooooc
+       ${red}'''  ${yellow}''''
+accentcolor: yellow

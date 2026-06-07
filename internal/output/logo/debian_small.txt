@@ -1,7 +1,7 @@
-asciicolor: bright_red
-  _____
- /  __ \
-|  /    |
-|  \___-
--__
-  --_
+${red} _____
+${red}/  __ \
+${red}| /    |
+${red}| \___-
+${red}-__
+${red}  --_
+accentcolor: red

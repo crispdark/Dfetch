@@ -18,29 +18,27 @@ func main() {
 	sys := modules.CollectSystemInfo(cfg.EnabledModules)
 
 	// Prepare the ASCII art
-	asciiLines, asciiColor := output.LoadASCII(
+	asciiLines, accentColor := output.LoadASCII(
 		output.LogoFS,
 		sys.ID,
-		cfg.AsciiColor,
 		cfg.AsciiSize,
 		cfg.CustomAscii,
 	)
-
-	if cfg.AccentColor == "" || cfg.AccentColor == "default" {
-		cfg.AccentColor = asciiColor
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	// Get the ANSI codes corresponding to the colors
-	asciiColor = config.GetColorCode(asciiColor)
-	cfg.AccentColor = config.GetColorCode(cfg.AccentColor)
+	if cfg.AccentColor == "" || cfg.AccentColor == "default" {
+		cfg.AccentColor = accentColor
+	}
 
 	// Build the info lines
 	infoLines := output.BuildInfoLines(
 		sys,
 		cfg.EnabledModules,
-		cfg.AccentColor,
+		accentColor,
 	)
 
 	// Put everything together and print it
-	output.PrintOutput(asciiLines, infoLines, asciiColor)
+	output.PrintOutput(asciiLines, infoLines)
 }
