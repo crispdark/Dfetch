@@ -4,7 +4,7 @@ A clean and practical system information tool focused on clean, easy to understa
 
 <table>
   <tr>
-    <td><img src="image/output_example_1.png" alt="Output example Debian" width="100%"></td>
+    <td><img src="image/output_example_1.png" alt="Output example Linux mint" width="100%"></td>
     <td><img src="image/output_example_2.png" alt="output example Arch" width="100%"></td>
   </tr>
   <tr>
