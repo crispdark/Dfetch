@@ -127,3 +127,9 @@ At the bottom of the file add an accentcolor: `accentcolor: green`. This is the 
 
 
 Now in the config file add / edit `customascii: PATH_TO_FILE`. Dfetch should now be using your ASCII art.
+
+![Last commit](https://img.shields.io/github/last-commit/David17c/dfetch?style=flat&color=%231e90ff)
+![Created At](https://img.shields.io/github/created-at/david17c/dfetch?style=flat&color=%231e90ff)
+![Repo stars](https://img.shields.io/github/stars/david17c/dfetch?style=flat&color=%231e90ff)
+![Code size in bytes](https://img.shields.io/github/languages/code-size/david17c/dfetch?style=flat&color=%231e90ff)
+
