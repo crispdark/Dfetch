@@ -8,8 +8,8 @@ ${magenta} ///////${bright_white}767676${magenta}///${bright_white}76767${magent
 ${magenta}/////////${bright_white}767676${magenta}//${bright_white}76767${magenta}///${bright_white}767676${magenta}////////
 ${magenta}//////////${bright_white}76767676767${magenta}////${bright_white}76767${magenta}/////////
 ${magenta}///////////${bright_white}76767676${magenta}//////${bright_white}7676${magenta}//////////
-${magenta}////////////,${bright_white}7676${magenta},///////${bright_white}767${magenta}///////////
-${magenta}/////////////*${bright_white}7676${magenta}///////${bright_white}76${magenta}////////////
+${magenta}/////////////${bright_white}7676${magenta}////////${bright_white}767${magenta}///////////
+${magenta}//////////////${bright_white}7676${magenta}///////${bright_white}76${magenta}////////////
 ${magenta}///////////////${bright_white}7676${magenta}////////////////////
 ${magenta} ///////////////${bright_white}7676${magenta}///${bright_white}767${magenta}////////////
 ${magenta}  //////////////////////${bright_white}'${magenta}////////////

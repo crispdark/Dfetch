@@ -4,12 +4,12 @@ A clean and practical system information tool focused on clean, easy to understa
 
 <table>
   <tr>
-    <td><img src="image/default_output_example_linuxmint.png" alt="default Linux mint output example" width="100%"></td>
-    <td><img src="image/default_output_example_pop.png" alt="default Pop!_OS output example" width="100%"></td>
+    <td><img src="image/output_example_1.png" alt="Output example Debian" width="100%"></td>
+    <td><img src="image/output_example_2.png" alt="output example Arch" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="image/default_output_example_arch.png" alt="default Arch output example" width="100%"></td>
-    <td><img src="image/default_output_example_tux.png" alt="default Ubuntu output example" width="100%"></td>
+    <td><img src="image/output_example_3.png" alt="Output example Linux mint" width="100%"></td>
+    <td><img src="image/output_example_4.png" alt="Output example Pop!_os" width="100%"></td>
   </tr>
 </table>
 
@@ -42,6 +42,7 @@ modules {
 	cpu
 	memory
 	disk
+	packages
 	// battery
 	localip
 	// time
