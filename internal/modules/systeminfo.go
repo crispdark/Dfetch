@@ -20,6 +20,7 @@ type Modules struct {
 	Time       string
 	Date       string
 	Emptyline  string
+	Packages   string
 }
 
 func CollectSystemInfo(enabledModules []string) Modules {
@@ -74,6 +75,9 @@ func CollectSystemInfo(enabledModules []string) Modules {
 
 		case "emptyline":
 			sys.Emptyline = ""
+
+		case "packages":
+			sys.Packages = Packages()
 
 		default:
 			fmt.Printf("Module '%s' defined in config does not exist\n", module)

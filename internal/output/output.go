@@ -34,6 +34,7 @@ func BuildInfoLines(sys modules.Modules, enabledModules []string, accent string)
 		"disk":      field(accent, "Disk", sys.Disk),
 		"time":      field(accent, "Time", sys.Time),
 		"date":      field(accent, "Date", sys.Date),
+		"packages":  field(accent, "Packages", sys.Packages),
 		"emptyline": "",
 	}
 
