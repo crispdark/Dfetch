@@ -9,4 +9,4 @@ ${yellow}looooc           ${red}:oo'
    ${red}lo:;.   ${yellow}:oooo;${red}.
     ${red}':ooo; ${yellow}cooooc
        ${red}'''  ${yellow}''''
-accentcolor: yellow
+accent_color: yellow

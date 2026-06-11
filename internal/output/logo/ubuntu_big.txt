@@ -18,4 +18,4 @@ ${bright_yellow}'ooooooooool                         ${bright_red}coooo.
          ${bright_red}.:ooooooolc:. ${bright_yellow}.ooooooooooo'
            ${bright_red}.':loooooo;  ${bright_yellow},oooooooooc
                ${bright_red}..';::c'  ${bright_yellow}.;loooo:'
-accentcolor: bright_yellow
+accent_color: bright_yellow

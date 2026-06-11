@@ -6,4 +6,4 @@ ${green} \ \  / /
 ${green}  \ \/ /
 ${green}   \  /
 ${green}    \/
-accentcolor: green
+accent_color: green

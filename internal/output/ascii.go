@@ -57,8 +57,8 @@ func LoadASCII(fs embed.FS, distroID, asciisize, customascii string) ([]string, 
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		if strings.HasPrefix(strings.ToLower(line), "accentcolor:") {
-			accentColor = strings.TrimSpace(strings.TrimPrefix(line, "accentcolor:"))
+		if strings.HasPrefix(strings.ToLower(line), "accent_color:") {
+			accentColor = strings.TrimSpace(strings.TrimPrefix(line, "accent_color:"))
 			continue
 		}
 		lines = append(lines, line)

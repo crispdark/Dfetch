@@ -5,3 +5,4 @@ ${green}/      /
 ${green}\      \______
 ${green} \           /
 ${green}  \_________/
+accent_color: green

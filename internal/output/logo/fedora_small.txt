@@ -6,4 +6,4 @@ ${bright_blue}.'  ___|   __|
 ${bright_blue}|  |   |  |
 ${bright_blue}|  '._.'  |
 ${bright_blue} '._____.'
-accentcolor: blue
+accent_color: blue

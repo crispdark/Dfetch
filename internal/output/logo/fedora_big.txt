@@ -1,4 +1,3 @@
-asciicolor: bright_bright_blue
 ${bright_blue}       :-------------------::
 ${bright_blue}     :-----------${bright_white}/shhOHbmp${bright_blue}---:\
 ${bright_blue}   /-----------${bright_white}omMMMNNNMMD${bright_blue}  ---:
@@ -15,3 +14,4 @@ ${bright_blue}:-- ${bright_white}:dMNdhhdNMMNo${bright_blue}------------;
 ${bright_blue}:---${bright_white}:sdNMMMMNds:${bright_blue}------------:
 ${bright_blue}:------${bright_white}:://:${bright_blue}-------------::
 ${bright_blue}:----------------------:
+accent_color: bright_blue

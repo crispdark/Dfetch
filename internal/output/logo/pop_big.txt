@@ -18,4 +18,4 @@ ${magenta}    /////${bright_white}767676767676767676767${magenta}/////
 ${magenta}      ///////////////////////////
 ${magenta}         /////////////////////
 ${magenta}             /////////////
-accentcolor: magenta
+accent_color: magenta

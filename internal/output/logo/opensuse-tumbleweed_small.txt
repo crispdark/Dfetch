@@ -7,3 +7,4 @@ ${green}       |      |
 ${green}       |  +---|
 ${green}       |  |   |
 ${green}       `------`
+accent_color: green

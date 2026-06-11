@@ -5,4 +5,4 @@ ${magenta}  \ \_\ \    / /
 ${magenta}   \  ___\  /_/
 ${magenta}    \ \
 ${magenta}     \_\  (_)
-accencolor: magenta
+accent_color: magenta

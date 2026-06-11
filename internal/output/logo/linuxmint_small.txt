@@ -5,4 +5,4 @@ ${green}  | ${bright_white}| | | | ${green}|
 ${green}  | ${bright_white}| | | | ${green}|
 ${green}  | ${bright_white}\_____/ ${green}|
 ${green}  \_________/
-accentcolor: green
+accent_color: green

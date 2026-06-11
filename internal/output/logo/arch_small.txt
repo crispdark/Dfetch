@@ -5,4 +5,4 @@ ${blue}   /      \
 ${blue}  /   __   \
 ${blue} /   |  |   \
 ${blue}/_-''    ''-_\
-accentcolor: blue
+accent_color: blue

@@ -17,4 +17,4 @@ ${bright_white}     '-MMMM${green}.-MMMMMMMMMMMMMMM-.${bright_white}MMMM-'
 ${bright_white}       '.-MMMM${green}``--:::::--``${bright_white}MMMM-.'
 ${bright_white}            '-MMMMMMMMMMMMM-'
 ${bright_white}               ``-:::::-``
-accentcolor: green
+accent_color: green

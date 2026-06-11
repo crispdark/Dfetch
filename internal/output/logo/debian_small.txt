@@ -4,4 +4,4 @@ ${red}| /    |
 ${red}| \___-
 ${red}-__
 ${red}  --_
-accentcolor: red
+accent_color: red
