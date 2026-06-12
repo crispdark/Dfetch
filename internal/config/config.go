@@ -150,6 +150,7 @@ func CreateConfigFile() error {
 				"	memory\n" +
 				"	disk\n" +
 				"	packages\n" +
+				"	// motherboard\n" +
 				"	// battery\n" +
 				"	localip\n" +
 				"	// time\n" +

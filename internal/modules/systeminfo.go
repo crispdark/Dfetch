@@ -3,25 +3,26 @@ package modules
 import "fmt"
 
 type Modules struct {
-	DistroName string
-	ID         string
-	Kernel     string
-	CPU        string
-	Memory     string
-	Userinfo   string
-	LocalIP    string
-	Uptime     string
-	Battery    string
-	DE         string
-	Shell      string
-	Terminal   string
-	colorterm  string
-	Disk       string
-	Time       string
-	Date       string
-	Emptyline  string
-	Packages   string
-	Host       string
+	DistroName  string
+	ID          string
+	Kernel      string
+	CPU         string
+	Memory      string
+	Userinfo    string
+	LocalIP     string
+	Uptime      string
+	Battery     string
+	DE          string
+	Shell       string
+	Terminal    string
+	colorterm   string
+	Disk        string
+	Time        string
+	Date        string
+	Emptyline   string
+	Packages    string
+	Host        string
+	MotherBoard string
 }
 
 func CollectSystemInfo(enabledModules []string) Modules {
@@ -82,6 +83,9 @@ func CollectSystemInfo(enabledModules []string) Modules {
 
 		case "host":
 			sys.Host = Host()
+
+		case "motherboard":
+			sys.MotherBoard = MotherBoard()
 
 		default:
 			fmt.Printf("Module '%s' defined in config does not exist\n", module)

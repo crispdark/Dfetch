@@ -44,6 +44,7 @@ modules {
 	memory
 	disk
 	packages
+	// motherboard
 	// battery
 	localip
 	// time
@@ -66,7 +67,6 @@ accent_color: default
 // bright_green, bright_yellow,
 // bright_blue, bright_magenta,
 // bright_cyan, bright_white
-
 ```
 
 ## Supported Operating systems
