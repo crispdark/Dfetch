@@ -34,7 +34,7 @@ Currently no official package for any platform is provided. You can either build
 modules {
 	userinfo
 	os
-	Host
+	host
 	kernel
 	uptime
 	packages
@@ -51,9 +51,9 @@ modules {
 	// date
 }
 
-ascii_size: default
+ascii_size: big
 // Only works with build in ascii.
-// Ascii size can be either 'big', 'default' or 'small'. Default is big.
+// Ascii size can be either 'big' or 'small'.
 
 custom_ascii: default
 // Set a custom ascii logo by providing a path to the txt file containing it.

@@ -156,10 +156,10 @@ func CreateConfigFile() error {
 				"	// time\n" +
 				"	// date\n" +
 				"}\n\n" +
-				"ascii_size: default\n" +
+				"ascii_size: big\n" +
 				"// Only works with build in ascii.\n" +
 				"// Ascii size can be either 'big' or 'small'.\n\n" +
-				"custom_ascii: big\n" +
+				"custom_ascii: default\n" +
 				"// Set a custom ascii logo by providing a path to the txt file containing it.\n\n" +
 				"accent_color: default\n" +
 				"// Color used by the info labels\n\n" +
