@@ -1,8 +1,0 @@
-${green} ___________
-${green}|_          \
-${green}  | ${bright_white}| _____ ${green}|
-${green}  | ${bright_white}| | | | ${green}|
-${green}  | ${bright_white}| | | | ${green}|
-${green}  | ${bright_white}\_____/ ${green}|
-${green}  \_________/
-accent_color: green

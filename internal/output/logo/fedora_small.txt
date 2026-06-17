@@ -1,9 +1,0 @@
-${bright_blue}        _-----_
-${bright_blue}       |   __  |
-${bright_blue}       |  |  '_'
-${bright_blue}  .----|  |__
-${bright_blue}.'  ___|   __|
-${bright_blue}|  |   |  |
-${bright_blue}|  '._.'  |
-${bright_blue} '._____.'
-accent_color: blue

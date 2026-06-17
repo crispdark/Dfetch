@@ -1,8 +1,0 @@
-${magenta}______
-${magenta}\   _ \        __
-${magenta} \ \ \ \      / /
-${magenta}  \ \_\ \    / /
-${magenta}   \  ___\  /_/
-${magenta}    \ \
-${magenta}     \_\  (_)
-accent_color: magenta

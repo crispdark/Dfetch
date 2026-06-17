@@ -1,8 +1,0 @@
-${yellow}   .--.
-${yellow}  |o_o |
-${yellow}  |:_/ |
-${yellow} //    \\
-${yellow}(|      |)
-${yellow}/'\_   _/'\
-${yellow}\___}={___/
-accent_color: yellow

@@ -12,7 +12,6 @@ type Config struct {
 	EnabledModules []string
 
 	AccentColor string
-	AsciiSize   string
 	CustomAscii string
 }
 
@@ -47,7 +46,6 @@ func ReadConfig() (*Config, error) {
 
 	// Give option variables default values
 	cfg := &Config{
-		AsciiSize:   "default",
 		AccentColor: "default",
 		CustomAscii: "default",
 	}
@@ -91,11 +89,6 @@ func ReadConfig() (*Config, error) {
 			switch key {
 			case "accent_color":
 				cfg.AccentColor = value
-			case "ascii_size":
-				if value != "default" && value != "small" && value != "big" {
-					return nil, fmt.Errorf("invalid asciisize in config")
-				}
-				cfg.AsciiSize = value
 			case "custom_ascii":
 				cfg.CustomAscii = value
 			}
@@ -156,9 +149,6 @@ func CreateConfigFile() error {
 				"	// time\n" +
 				"	// date\n" +
 				"}\n\n" +
-				"ascii_size: big\n" +
-				"// Only works with build in ascii.\n" +
-				"// Ascii size can be either 'big' or 'small'.\n\n" +
 				"custom_ascii: default\n" +
 				"// Set a custom ascii logo by providing a path to the txt file containing it.\n\n" +
 				"accent_color: default\n" +

@@ -5,7 +5,6 @@ import (
 	"strings"
 )
 
-// List of all supported colors
 func GetColorCode(accentColor string) string {
 	switch strings.ToLower(accentColor) {
 	case "black":

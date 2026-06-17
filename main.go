@@ -21,14 +21,12 @@ func main() {
 	asciiLines, accentColor := output.LoadASCII(
 		output.LogoFS,
 		sys.ID,
-		cfg.AsciiSize,
 		cfg.CustomAscii,
 	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	
 	if cfg.AccentColor == "" || cfg.AccentColor == "default" {
 		cfg.AccentColor = accentColor
 	}

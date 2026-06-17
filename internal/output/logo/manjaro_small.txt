@@ -1,8 +1,0 @@
-${bright_green}||||||||| ||||
-${bright_green}||||||||| ||||
-${bright_green}||||      ||||
-${bright_green}|||| |||| ||||
-${bright_green}|||| |||| ||||
-${bright_green}|||| |||| ||||
-${bright_green}|||| |||| ||||
-accent_color: bright_green

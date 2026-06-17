@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func LoadASCII(fs embed.FS, distroID, asciisize, customascii string) ([]string, string) {
+func LoadASCII(fs embed.FS, distroID, customascii string) ([]string, string) {
 	var scanner *bufio.Scanner
 	var closer func()
 
@@ -26,18 +26,10 @@ func LoadASCII(fs embed.FS, distroID, asciisize, customascii string) ([]string, 
 	if scanner == nil {
 		var file string
 
-		if asciisize == "small" {
-			file = fmt.Sprintf("logo/%s_small.txt", strings.ToLower(distroID))
-		} else {
-			file = fmt.Sprintf("logo/%s_big.txt", strings.ToLower(distroID))
-		}
+		file = fmt.Sprintf("logo/%s.txt", strings.ToLower(distroID))
 
 		if _, err := fs.Open(file); err != nil {
-			if asciisize == "small" {
-				file = "logo/linux_small.txt"
-			} else {
-				file = "logo/linux_big.txt"
-			}
+			file = "logo/linux.txt"
 		}
 
 		f, err := fs.Open(file)

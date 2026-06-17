@@ -1,7 +1,0 @@
-${red} _____
-${red}/  __ \
-${red}| /    |
-${red}| \___-
-${red}-__
-${red}  --_
-accent_color: red

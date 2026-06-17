@@ -1,0 +1,20 @@
+${blue}     %%%%%%${bright_white}====${blue}%%%%%%%%%%            
+${blue}   %%%%%%%%    %%%%%%%%%%%%%%        
+${blue}  %%%%%%%%%    %%%%%%%%%%%%%%%%      
+${blue}  %%%%%%%%%    %%%%%%%%%%%%%%%###    
+${blue}  %%%%%%%%%    %%%%%%%%%%%%%######   
+${bright_white}  ==                  =======${blue}######  
+${bright_white}  ==                  =========${blue}##### 
+${blue}  %%%%%%%%%    ${blue}%%%%%%%####${bright_white}======${blue}#####
+${blue}  %%%%%%%%%    ${blue}%%%%%#######${bright_white}=====${blue}#####
+${blue}  %%%%%%%%%    ${blue}%%%#########${bright_white}=====${blue}#####
+${blue}  %%%%%%%%%    ${blue}%%##########${bright_white}=====${blue}#####
+${blue}  %%%%%%%%%${bright_white}====${blue}###########${bright_white}=====${blue}######
+${blue}   %%%%%%%%${bright_white}====${blue}#########${bright_white}======${blue}###### 
+${blue}    %%%%%%%${bright_white}=====${blue}#####${bright_white}========${blue}######  
+${blue}     %%%%###${bright_white}===============${blue}#######   
+${blue}      %#######${bright_white}==========${blue}#########    
+${blue}        #######################      
+${blue}          ###################        
+${blue}              ###########    
+accent_color: blue

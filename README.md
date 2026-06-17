@@ -20,7 +20,7 @@ Dfetch does not try to compete with heavily customizable alternatives like [Neof
 
 ## Installation
 
-Currently no official package for any platform is provided. You can either build Dfetch from source or [download the latest prebuilt binaries](https://github.com/David17c/Dfetch/releases).
+Currently, no official packages are available for any platform. You can either build Dfetch from source or [download the latest prebuilt binaries](https://github.com/David17c/Dfetch/releases). Platform-specific packages will be provided when version 1.0 is released.
 
 ## Customization
 
@@ -51,10 +51,6 @@ modules {
 	// date
 }
 
-ascii_size: big
-// Only works with build in ascii.
-// Ascii size can be either 'big' or 'small'.
-
 custom_ascii: default
 // Set a custom ascii logo by providing a path to the txt file containing it.
 
@@ -70,27 +66,27 @@ accent_color: default
 // bright_cyan, bright_white
 ```
 
-## Supported Operating systems
+## Supported Linux distro's
 
 ```txt
-- Linux
-  - Debian
-  - Arch
-  - CachyOS
-  - Fedora
-  - Linux Mint
-  - OpenSUSE Leap
-  - OpenSUSE Tumbleweed
-  - Pop! OS
-  - Ubuntu
-  - Manjaro
+- Debian
+- Arch
+- CachyOS
+- Fedora
+- Linux Mint
+- OpenSUSE Leap
+- OpenSUSE Tumbleweed
+- Pop! OS
+- Ubuntu
+- Manjaro
+- Bazzite
 ```
 
 While overtime support for more distro's will be added Dfetch does not try to support all distro's instead just focusing on the main ones people actually use.
 
 ## How to make a custom ascii art
 
-first put the ASCII art you want to use into a `txt` file. it should look something like this.
+Put the ASCII art you want to use into a `txt` file. it should look something like this.
 
 ```
              ...-:::::-...
@@ -114,7 +110,7 @@ first put the ASCII art you want to use into a `txt` file. it should look someth
                ``-:::::-``
 ```
 
-Now you can give it color by adding color tags. For a list of supported colors look at the default config file.
+Now (optionally) give it color by adding color tags. For a list of supported colors look at the default config file.
 
 ```
              ${bright_white}...-:::::-...
