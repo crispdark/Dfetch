@@ -20,6 +20,21 @@ func Packages() string {
 	case exists("pacman"):
 		cmd = exec.Command("pacman", "-Qq")
 
+	case exists("apk"):
+		cmd = exec.Command("apk", "info")
+
+	case exists("xbps-query"):
+		cmd = exec.Command("xbps-query", "-l")
+
+	case exists("eopkg"):
+		cmd = exec.Command("eopkg", "list-installed")
+
+	case exists("pkg"):
+		cmd = exec.Command("pkg", "info")
+
+	case exists("pkg_info"):
+		cmd = exec.Command("pkg_info")
+
 	default:
 		return "Unknown package manager"
 	}

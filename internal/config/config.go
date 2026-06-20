@@ -102,9 +102,9 @@ func ReadConfig() (*Config, error) {
 		return nil, err
 	}
 
-	// Error if a block was never closed
+	// Error if modules block was not closed
 	if inModules {
-		return nil, fmt.Errorf("unterminated block in config")
+		return nil, fmt.Errorf("Modules block in config file not closed")
 	}
 
 	return cfg, nil
