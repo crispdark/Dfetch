@@ -103,4 +103,4 @@ func DesktopEnvironment() string {
 	return id
 }
 
-// Support for more desktop enviroments like Cosmic and deepin will be added over time
+// Support for more desktop enviroments will be added over time

@@ -144,8 +144,8 @@ func CreateConfigFile() error {
 				"	memory\n" +
 				"	disk\n" +
 				"	motherboard\n" +
+				"	localip\n" +
 				"	// battery\n" +
-				"	// localip\n" +
 				"	// time\n" +
 				"	// date\n" +
 				"}\n\n" +
