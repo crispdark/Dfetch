@@ -3,5 +3,5 @@ package modules
 import "time"
 
 func Date() string {
-	return time.Now().Format("01-02-2006")
+	return time.Now().Format("2006-01-02")
 }

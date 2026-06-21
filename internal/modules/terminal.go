@@ -7,34 +7,55 @@ import (
 	"strings"
 )
 
+func terminalWithVersion(cmd, name string, args ...string) string {
+	out, err := exec.Command(cmd, args...).Output()
+	if err != nil {
+		return name
+	}
+
+	if v := extractVersion(string(out)); v != "" {
+		return fmt.Sprintf("%s %s", name, v)
+	}
+
+	return name
+}
+
 func Terminal() string {
 	if os.Getenv("ALACRITTY_SOCKET") != "" {
-		out, err := exec.Command("alacritty", "--version").Output()
-		if err != nil {
-			return "Alacritty"
-		}
+		return terminalWithVersion("alacritty", "Alacritty", "--version")
+	}
 
-		if v := extractVersion(string(out)); v != "" {
-			return fmt.Sprintf("Alacritty %s", v)
-		}
-		return "Alacritty"
+	if os.Getenv("GNOME_TERMINAL_SCREEN") != "" {
+		return terminalWithVersion("gnome-terminal", "GNOME Terminal", "--version")
 	}
 
 	if os.Getenv("KITTY_PID") != "" {
-		out, err := exec.Command("kitty", "--version").Output()
-		if err != nil {
-			return "Kitty"
-		}
-
-		if v := extractVersion(string(out)); v != "" {
-			return fmt.Sprintf("Kitty %s", v)
-		}
-		return "Kitty"
+		return terminalWithVersion("kitty", "Kitty", "--version")
 	}
 
-	if os.Getenv("TERM_PROGRAM") != "" {
-		return strings.TrimSpace(os.Getenv("TERM_PROGRAM"))
+	if termProg := os.Getenv("TERM_PROGRAM"); termProg != "" {
+		switch strings.ToLower(strings.TrimSpace(termProg)) {
+		case "vscode":
+			return "VSCode"
+		case "wezterm":
+			return "WezTerm"
+		default:
+			return termProg
+		}
 	}
 
-	return os.Getenv("TERM")
+	term := os.Getenv("TERM")
+
+	if strings.HasPrefix(term, "foot") {
+		return terminalWithVersion("foot", "Foot", "--version")
+	}
+
+	switch term {
+	case "":
+		return "unknown"
+	case "xterm":
+		return "XTerm"
+	default:
+		return term
+	}
 }

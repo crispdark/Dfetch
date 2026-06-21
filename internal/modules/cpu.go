@@ -20,7 +20,7 @@ func Cpu() string {
 		}
 	}
 
-	// Fallback: requires lscpu
+	// Fallback (only works with lscpu installed)
 	out, err := exec.Command("lscpu").Output()
 	if err != nil {
 		return "unknown"

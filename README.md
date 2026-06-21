@@ -75,7 +75,6 @@ accent_color: default
 - Debian
 - Fedora
 - Linux Mint
-- LMDE
 - Manjaro
 - OpenSUSE Leap
 - OpenSUSE Tumbleweed

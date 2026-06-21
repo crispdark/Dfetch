@@ -25,7 +25,7 @@ func BuildInfoLines(sys modules.Modules, enabledModules []string, accent string)
 		"kernel":      field(accent, "Kernel", sys.Kernel),
 		"cpu":         field(accent, "CPU", sys.CPU),
 		"memory":      field(accent, "RAM", sys.Memory),
-		"localip":     field(accent, "IP", sys.LocalIP),
+		"localip":     field(accent, "Local IP", sys.LocalIP),
 		"uptime":      field(accent, "Uptime", sys.Uptime),
 		"shell":       field(accent, "Shell", sys.Shell),
 		"terminal":    field(accent, "Terminal", sys.Terminal),
