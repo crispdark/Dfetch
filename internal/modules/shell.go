@@ -24,7 +24,6 @@ func Shell() string {
 	}
 
 	switch shell {
-
 	case "bash":
 		out, err := exec.Command("bash", "--version").Output()
 		if err != nil {

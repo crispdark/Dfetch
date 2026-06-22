@@ -1,21 +1,21 @@
                              ${bright_yellow}....
-              ${bright_red}.',:clooo:  ${bright_yellow}.:looooo:.
-           ${bright_red}.;looooooooc  ${bright_yellow}.oooooooooo'
-        ${bright_red}.;looooool:,''.  ${bright_yellow}:ooooooooooc
-       ${bright_red};looool;.         ${bright_yellow}'oooooooooo,
-      ${bright_red};clool'             ${bright_yellow}.cooooooc.  ${bright_red},,
-         ${bright_red}...                ${bright_yellow}......  ${bright_red}.:oo,
-  ${bright_yellow}.;clol:,.                        ${bright_red}.loooo'
- ${bright_yellow}:ooooooooo,                        ${bright_red}'ooool
-${bright_yellow}'ooooooooooo.                        ${bright_red}loooo.
-${bright_yellow}'ooooooooool                         ${bright_red}coooo.
- ${bright_yellow},loooooooc.                        ${bright_red}.loooo.
-   ${bright_yellow}.,;;;'.                          ${bright_red};ooooc
-       ${bright_red}...                         ${bright_red},ooool.
-    ${bright_red}.cooooc.              ${bright_yellow}..',,'.  ${bright_red}.cooo.
-      ${bright_red};ooooo:.           ${bright_yellow};oooooooc.  ${bright_red}:l.
-       ${bright_red}.coooooc,..      ${bright_yellow}coooooooooo.
-         ${bright_red}.:ooooooolc:. ${bright_yellow}.ooooooooooo'
-           ${bright_red}.':loooooo;  ${bright_yellow},oooooooooc
-               ${bright_red}..';::c'  ${bright_yellow}.;loooo:'
+              ${bright_yellow}.',:clooo:  ${bright_yellow}.:looooo:.
+           ${bright_yellow}.;looooooooc  ${bright_yellow}.oooooooooo'
+        ${bright_yellow}.;looooool:,''.  ${bright_yellow}:ooooooooooc
+       ${bright_yellow};looool;.         ${bright_yellow}'oooooooooo,
+      ${bright_yellow};clool'             ${bright_yellow}.cooooooc.  ${bright_yellow},,
+         ${bright_yellow}...                ${bright_yellow}......  ${bright_yellow}.:oo,
+  ${bright_yellow}.;clol:,.                        ${bright_yellow}.loooo'
+ ${bright_yellow}:ooooooooo,                        ${bright_yellow}'ooool
+${bright_yellow}'ooooooooooo.                        ${bright_yellow}loooo.
+${bright_yellow}'ooooooooool                         ${bright_yellow}coooo.
+ ${bright_yellow},loooooooc.                        ${bright_yellow}.loooo.
+   ${bright_yellow}.,;;;'.                          ${bright_yellow};ooooc
+       ${bright_yellow}...                         ${bright_yellow},ooool.
+    ${bright_yellow}.cooooc.              ${bright_yellow}..',,'.  ${bright_yellow}.cooo.
+      ${bright_yellow};ooooo:.           ${bright_yellow};oooooooc.  ${bright_yellow}:l.
+       ${bright_yellow}.coooooc,..      ${bright_yellow}coooooooooo.
+         ${bright_yellow}.:ooooooolc:. ${bright_yellow}.ooooooooooo'
+           ${bright_yellow}.':loooooo;  ${bright_yellow},oooooooooc
+               ${bright_yellow}..';::c'  ${bright_yellow}.;loooo:'
 accent_color: bright_yellow

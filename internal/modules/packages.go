@@ -13,6 +13,7 @@ func Packages() string {
 		name string
 	)
 
+	// Tries different package managers to see which is installed
 	switch {
 	case exists("dpkg-query"):
 		name = "dpkg"

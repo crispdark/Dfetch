@@ -20,6 +20,7 @@ func terminalWithVersion(cmd, name string, args ...string) string {
 	return name
 }
 
+// A few common hard coded terminals are returned in a nicer format
 func Terminal() string {
 	if os.Getenv("ALACRITTY_SOCKET") != "" {
 		return terminalWithVersion("alacritty", "Alacritty", "--version")

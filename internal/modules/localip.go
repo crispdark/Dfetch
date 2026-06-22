@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func LocalIP() string {
+func Local_IP() string {
 	interfaces, err := net.Interfaces()
 	if err != nil {
 		return "unknown"

@@ -22,16 +22,18 @@ func LoadASCII(fs embed.FS, distroID, customascii string) ([]string, string) {
 		}
 	}
 
-	// fallback
+	// Build in ascii
 	if scanner == nil {
 		var file string
 
 		file = fmt.Sprintf("logo/%s.txt", strings.ToLower(distroID))
 
+		// Fallback to Linux logo
 		if _, err := fs.Open(file); err != nil {
 			file = "logo/linux.txt"
 		}
 
+		// Fallback to no ascii
 		f, err := fs.Open(file)
 		if err != nil {
 			return nil, ""
@@ -49,6 +51,7 @@ func LoadASCII(fs embed.FS, distroID, customascii string) ([]string, string) {
 	for scanner.Scan() {
 		line := scanner.Text()
 
+		// Take aside the accent_color
 		if strings.HasPrefix(strings.ToLower(line), "accent_color:") {
 			accentColor = strings.TrimSpace(strings.TrimPrefix(line, "accent_color:"))
 			continue

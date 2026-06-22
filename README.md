@@ -4,35 +4,34 @@ Dfetch is a lightweight system information tool focused on clean output, fast st
 
 <table>
   <tr>
-    <td><img src="image/output_example_1.png" alt="Output example Debian" width="100%"></td>
-    <td><img src="image/output_example_2.png" alt="output example Arch" width="100%"></td>
+    <td><img src="image/output_example_1.png" alt="Output example Pop os" width="100%"></td>
+    <td><img src="image/output_example_2.png" alt="output example Linux MInt" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="image/output_example_3.png" alt="Output example Linux mint" width="100%"></td>
-    <td><img src="image/output_example_4.png" alt="Output example Pop os" width="100%"></td>
+    <td><img src="image/output_example_3.png" alt="Output example Debian" width="100%"></td>
+    <td><img src="image/output_example_4.png" alt="Output example Fedora" width="100%"></td>
   </tr>
 </table>
+
+## Why use this?
+
+Dfetch is designed for users who want a simple system information tool with sensible defaults, clean output, and fast startup times. Rather than prioritizing extensive customization, Dfetch focuses on being lightweight, easy to configure, and pleasant to use.
 
 ## Features
 
 ```
 - Fast startup time
 - Simple configuration file
-- Useful system information without clutter
+- Useful, clutter-free system information
 - Custom ASCII art support
-- Configurable module ordering
+- Configurable modules
 - No external dependencies
 - Clean default look
 ```
 
-## Why use this?
-
-Dfetch doesn't aim to compete with highly customizable tools such as Neofetch or Fastfetch. Instead, it focuses on providing clean output, sensible defaults, fast startup times, and straightforward configuration.
-
-
 ## Installation
 
-Currently, no official packages are available for any platform. You can either build Dfetch from source or [download the latest prebuilt binaries](https://github.com/David17c/Dfetch/releases). Platform-specific packages will be provided when version 1.0.0 is released.
+To install Dfetch, visit [the releases page](https://github.com/David17c/Dfetch/releases) and either download the package for your operating system, download a prebuilt binary, or build Dfetch from source.
 
 ## Customization
 
@@ -42,25 +41,26 @@ Currently, no official packages are available for any platform. You can either b
 // Lines starting with `//` are comments and are ignored by Dfetch.
 // In the modules section, you can change which information is displayed and in what order.
 
-// The 'emptyline' module can be used to insert an empty line between modules.
+// Insert empty lines in the modules block to get empty lines in the final output.
 modules {
-	userinfo
-	os
-	host
-	kernel
-	uptime
-	packages
-	shell
-	de
-	terminal
-	cpu
-	memory
-	disk
-	motherboard
-	localip
-	// battery
-	// time
-	// date
+    userinfo
+    os
+    host
+    kernel
+    uptime
+    shell
+    terminal
+    de
+    packages
+    cpu
+    ram
+    swap
+    disk
+    motherboard
+    local_ip
+    // battery
+    // time
+    // date
 }
 
 custom_ascii: default
@@ -80,7 +80,7 @@ accent_color: default
 
 ## Supported Linux distros
 
-```txt
+```
 - Arch
 - Bazzite
 - CachyOS
@@ -99,7 +99,7 @@ If your favorite distro isn't listed, it may still be supported. This list only 
 
 ## How to make a custom ascii art
 
-Put the ASCII art you want to use into a `txt` file. It should look something like this.
+Save your ASCII art in a text file. It should look something like this.
 
 ```
              ...-:::::-...
@@ -123,7 +123,7 @@ Put the ASCII art you want to use into a `txt` file. It should look something li
                ``-:::::-``
 ```
 
-You can optionally add colors by using color tags. For a list of supported colors look at the default config file.
+You can then optionally add colors by using color tags. For a list of supported colors look at the default config file.
 
 ```
              ${bright_white}...-:::::-...
@@ -148,9 +148,6 @@ ${bright_white}               ``-:::::-``
 accent_color: green
 ```
 
-At the bottom of the file add an accent_color: `accent_color: green`. This is the color given to the info module labels.
+At the bottom of the file add an accent color: `accent_color: green`. This is the color given to the info module labels.
 
-Now in the config file add / edit `custom_ascii: PATH_TO_FILE`. Dfetch should now be using your ASCII art.
-
-> [!NOTE]  
-> Ai was used to help find bugs but did not write any code in this project.
+In your config file, set: `custom_ascii: PATH_TO_FILE`. Dfetch should now be using your ASCII art.

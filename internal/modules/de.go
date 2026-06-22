@@ -102,5 +102,3 @@ func DesktopEnvironment() string {
 	}
 	return id
 }
-
-// Support for more desktop enviroments will be added over time

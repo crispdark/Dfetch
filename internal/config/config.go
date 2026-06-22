@@ -60,11 +60,6 @@ func ReadConfig() (*Config, error) {
 			line = strings.TrimSpace(line[:idx])
 		}
 
-		// Skip empty lines
-		if line == "" {
-			continue
-		}
-
 		// Detects start of modules block
 		if strings.EqualFold(line, "modules {") {
 			inModules = true
@@ -76,6 +71,11 @@ func ReadConfig() (*Config, error) {
 			if line == "}" {
 				inModules = false
 				continue
+			}
+
+			// Replace emptylines in the modules section with the emptyline module
+			if line == "" {
+				line = "emptyline"
 			}
 
 			cfg.EnabledModules = append(cfg.EnabledModules, strings.ToLower(line))
@@ -95,6 +95,10 @@ func ReadConfig() (*Config, error) {
 
 			continue
 		}
+		// Skip empty lines outside of the modules section
+		if line == "" {
+			continue
+		}
 	}
 
 	// Error if scanner fails
@@ -102,9 +106,9 @@ func ReadConfig() (*Config, error) {
 		return nil, err
 	}
 
-	// Error if modules block was not closed
+	// Errror if modules block was not closed
 	if inModules {
-		return nil, fmt.Errorf("Modules block in config file not closed")
+		return nil, fmt.Errorf("unclosed modules block in config file")
 	}
 
 	return cfg, nil
@@ -129,25 +133,26 @@ func CreateConfigFile() error {
 		config.WriteString(
 			"// Lines starting with `//` are comments and are ignored by Dfetch.\n" +
 				"// In the modules section, you can change which information is displayed and in what order.\n\n" +
-				"// The 'emptyline' module can be used to insert an empty line between modules.\n" +
+				"// Insert empty lines in the modules block to get empty lines in the final output.\n" +
 				"modules {\n" +
-				"	userinfo\n" +
-				"	os\n" +
-				"	host\n" +
-				"	kernel\n" +
-				"	uptime\n" +
-				"	packages\n" +
-				"	shell\n" +
-				"	de\n" +
-				"	terminal\n" +
-				"	cpu\n" +
-				"	memory\n" +
-				"	disk\n" +
-				"	motherboard\n" +
-				"	localip\n" +
-				"	// battery\n" +
-				"	// time\n" +
-				"	// date\n" +
+				"    userinfo\n" +
+				"    os\n" +
+				"    host\n" +
+				"    kernel\n" +
+				"    uptime\n" +
+				"    shell\n" +
+				"    terminal\n" +
+				"    de\n" +
+				"    packages\n" +
+				"    cpu\n" +
+				"    ram\n" +
+				"    swap\n" +
+				"    disk\n" +
+				"    motherboard\n" +
+				"    local_ip\n" +
+				"    // battery\n" +
+				"    // time\n" +
+				"    // date\n" +
 				"}\n\n" +
 				"custom_ascii: default\n" +
 				"// Set a custom ASCII logo by providing the path to a text file containing it.\n\n" +

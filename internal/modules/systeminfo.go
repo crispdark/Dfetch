@@ -7,9 +7,10 @@ type Modules struct {
 	ID          string
 	Kernel      string
 	CPU         string
-	Memory      string
+	RAM         string
+	Swap        string
 	Userinfo    string
-	LocalIP     string
+	Local_IP    string
 	Uptime      string
 	Battery     string
 	DE          string
@@ -45,11 +46,11 @@ func CollectSystemInfo(enabledModules []string) Modules {
 		case "cpu":
 			sys.CPU = Cpu()
 
-		case "memory":
-			sys.Memory = Ram()
+		case "ram":
+			sys.RAM = RAM()
 
-		case "localip":
-			sys.LocalIP = LocalIP()
+		case "local_ip":
+			sys.Local_IP = Local_IP()
 
 		case "uptime":
 			sys.Uptime = Uptime()
@@ -86,6 +87,9 @@ func CollectSystemInfo(enabledModules []string) Modules {
 
 		case "motherboard":
 			sys.MotherBoard = MotherBoard()
+
+		case "swap":
+			sys.Swap = Swap()
 
 		default:
 			fmt.Printf("Unable to find module '%s'\n", module)

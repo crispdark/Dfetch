@@ -1,4 +1,3 @@
-// customization/colors.go
 package config
 
 import (
