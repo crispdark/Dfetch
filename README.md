@@ -93,6 +93,7 @@ accent_color: default
 - Pop!_OS
 - Ubuntu
 - Zorin OS
+- EndeavourOS
 ```
 
 If your favorite distro isn't listed, it may still be supported. This list only includes distributions that have built-in ASCII art and have been tested.

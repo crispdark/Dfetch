@@ -32,7 +32,7 @@ func Battery() string {
 	if status == "unknown" {
 		return fmt.Sprintf("%d%%", capacity)
 	}
-	return fmt.Sprintf("%d%% [%s]", capacity, status)
+	return fmt.Sprintf("%d%% (%s)", capacity, status)
 }
 
 func findBattery() (string, error) {
