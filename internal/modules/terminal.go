@@ -34,6 +34,10 @@ func Terminal() string {
 		return terminalWithVersion("kitty", "Kitty", "--version")
 	}
 
+	if v := os.Getenv("KONSOLE_VERSION"); v != "" {
+		return fmt.Sprintf("Konsole %s", v)
+	}
+
 	if termProg := os.Getenv("TERM_PROGRAM"); termProg != "" {
 		switch strings.ToLower(strings.TrimSpace(termProg)) {
 		case "vscode":
