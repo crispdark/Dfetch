@@ -96,7 +96,7 @@ accent_color: default
 - EndeavourOS
 ```
 
-If your favorite distro isn't listed, it may still be supported. This list only includes distributions that have built-in ASCII art and have been tested.
+If your favorite distro isn't listed, it may still be supported. This list only includes distributions that Dfetch has built-in ASCII art for and that have been tested.
 
 ## How to make a custom ascii art
 
