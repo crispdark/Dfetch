@@ -4,62 +4,71 @@ import (
 	"bytes"
 	"fmt"
 	"os/exec"
-	"strings"
+	"sync"
+)
+
+type packageManager struct {
+	name string
+	bin  string
+	args []string
+}
+
+var packageManagers = []packageManager{
+	{"dpkg", "dpkg-query", []string{"-f", "${binary:Package}\n", "-W"}},
+	{"rpm", "rpm", []string{"-qa"}},
+	{"pacman", "pacman", []string{"-Qq"}},
+	{"apk", "apk", []string{"info"}},
+	{"xbps", "xbps-query", []string{"-l"}},
+	{"eopkg", "eopkg", []string{"list-installed"}},
+	{"pkg", "pkg", []string{"info"}},
+	{"pkg_info", "pkg_info", nil},
+}
+
+var (
+	detectOnce sync.Once
+	detected   *packageManager
+
+	countOnce sync.Once
+	result    string
 )
 
 func Packages() string {
-	var (
-		cmd  *exec.Cmd
-		name string
-	)
+	countOnce.Do(func() {
+		pm := getPackageManager()
+		if pm == nil {
+			result = "Unknown package manager"
+			return
+		}
 
-	// Tries different package managers to see which is installed
-	switch {
-	case exists("dpkg-query"):
-		name = "dpkg"
-		cmd = exec.Command("dpkg-query", "-f", "${binary:Package}\n", "-W")
+		out, err := exec.Command(pm.bin, pm.args...).Output()
+		if err != nil {
+			result = "unknown"
+			return
+		}
 
-	case exists("rpm"):
-		name = "rpm"
-		cmd = exec.Command("rpm", "-qa")
+		count := bytes.Count(out, []byte{'\n'})
 
-	case exists("pacman"):
-		name = "pacman"
-		cmd = exec.Command("pacman", "-Qq")
+		if len(out) > 0 && out[len(out)-1] != '\n' {
+			count++
+		}
 
-	case exists("apk"):
-		name = "apk"
-		cmd = exec.Command("apk", "info")
+		result = fmt.Sprintf("%d (%s)", count, pm.name)
+	})
 
-	case exists("xbps-query"):
-		name = "xbps"
-		cmd = exec.Command("xbps-query", "-l")
+	return result
+}
 
-	case exists("eopkg"):
-		name = "eopkg"
-		cmd = exec.Command("eopkg", "list-installed")
+func getPackageManager() *packageManager {
+	detectOnce.Do(func() {
+		for i := range packageManagers {
+			if exists(packageManagers[i].bin) {
+				detected = &packageManagers[i]
+				return
+			}
+		}
+	})
 
-	case exists("pkg"):
-		name = "pkg"
-		cmd = exec.Command("pkg", "info")
-
-	case exists("pkg_info"):
-		name = "pkg_info"
-		cmd = exec.Command("pkg_info")
-
-	default:
-		return "Unknown package manager"
-	}
-
-	var out bytes.Buffer
-	cmd.Stdout = &out
-
-	if err := cmd.Run(); err != nil {
-		return "unknown"
-	}
-
-	count := len(strings.Fields(out.String()))
-	return fmt.Sprintf("%d (%s)", count, name)
+	return detected
 }
 
 func exists(name string) bool {
