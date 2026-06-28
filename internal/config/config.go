@@ -71,15 +71,12 @@ func ReadConfig() (*Config, error) {
 			continue
 		}
 
-		// Parse modules block
 		if inModules {
-			// Detect end of modules block
 			if line == "}" {
 				inModules = false
 				continue
 			}
 
-			// Empty lines become the emptyline module
 			if line == "" {
 				cfg.EnabledModules = append(cfg.EnabledModules, "emptyline")
 				continue
@@ -89,7 +86,6 @@ func ReadConfig() (*Config, error) {
 			continue
 		}
 
-		// Parse key:value options
 		if idx := strings.Index(line, ":"); idx != -1 {
 			key := strings.ToLower(strings.TrimSpace(line[:idx]))
 			value := strings.ToLower(strings.TrimSpace(line[idx+1:]))
@@ -104,7 +100,6 @@ func ReadConfig() (*Config, error) {
 			continue
 		}
 
-		// Skip empty lines outside modules
 		if line == "" {
 			continue
 		}

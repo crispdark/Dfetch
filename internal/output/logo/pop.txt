@@ -6,11 +6,11 @@ ${magenta}   /////${bright_white}76767${magenta}//${bright_white}7676767${magent
 ${magenta}  /////${bright_white}767676${magenta}///${bright_white}*76767${magenta}///////////////
 ${magenta} ///////${bright_white}767676${magenta}///${bright_white}76767${magenta}.///${bright_white}7676*${magenta}///////
 ${magenta}/////////${bright_white}767676${magenta}//${bright_white}76767${magenta}///${bright_white}767676${magenta}////////
-${magenta}//////////${bright_white}76767676767${magenta}////${bright_white}76767${magenta}/////////
+${magenta}//////////${bright_white}76767676767${magenta}////${bright_whit{bright_white}7676${magenta}///////${bright_white}76${magenta}////////////
+${magenta}///////////////${brige}76767${magenta}/////////
 ${magenta}///////////${bright_white}76767676${magenta}//////${bright_white}7676${magenta}//////////
 ${magenta}/////////////${bright_white}7676${magenta}////////${bright_white}767${magenta}///////////
-${magenta}//////////////${bright_white}7676${magenta}///////${bright_white}76${magenta}////////////
-${magenta}///////////////${bright_white}7676${magenta}////////////////////
+${magenta}//////////////$ht_white}7676${magenta}////////////////////
 ${magenta} ///////////////${bright_white}7676${magenta}///${bright_white}767${magenta}////////////
 ${magenta}  //////////////////////${bright_white}'${magenta}////////////
 ${magenta}   //////${bright_white}.7676767676767676767,${magenta}//////

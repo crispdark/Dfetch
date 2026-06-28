@@ -23,7 +23,6 @@ func GetColorCode(accentColor string) string {
 	case "white":
 		return "\x1b[37m"
 
-	// Bright colors
 	case "bright_black", "gray", "grey":
 		return "\x1b[90m"
 	case "bright_red":
