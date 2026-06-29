@@ -20,7 +20,6 @@ func terminalWithVersion(cmd, name string, args ...string) string {
 	return name
 }
 
-// A few common hard coded terminals are returned in a nicer format
 func Terminal() string {
 	if os.Getenv("ALACRITTY_SOCKET") != "" {
 		return terminalWithVersion("alacritty", "Alacritty", "--version")
@@ -59,6 +58,16 @@ func Terminal() string {
 	case "":
 		return "unknown"
 	case "xterm":
+		out, err := exec.Command("xterm", "-v").Output()
+		if err != nil {
+			return "XTerm"
+		}
+
+		var version int
+		if _, err := fmt.Sscanf(strings.TrimSpace(string(out)), "XTerm(%d)", &version); err == nil {
+			return fmt.Sprintf("XTerm %d", version)
+		}
+
 		return "XTerm"
 	default:
 		return term
