@@ -78,8 +78,6 @@ accent_color: default
 // bright_cyan, bright_white
 ```
 
-## Supported Linux distros
-
 ## Supported Linux distributions
 
 | Distribution | Status |
