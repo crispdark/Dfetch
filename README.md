@@ -80,24 +80,29 @@ accent_color: default
 
 ## Supported Linux distros
 
-```
-- Arch
-- Bazzite
-- CachyOS
-- Debian
-- Fedora
-- Linux Mint
-- Manjaro
-- OpenSUSE Leap
-- OpenSUSE Tumbleweed
-- Pop!_OS
-- Ubuntu
-- Zorin OS
-- EndeavourOS
-- Nix OS
-```
+## Supported Linux distributions
 
-If your favorite distro isn't listed, it may still be supported. This list only includes distributions that Dfetch has built-in ASCII art for and that have been tested.
+| Distribution | Status |
+|--------------|--------|
+| Arch | Tested |
+| Artix | Untested |
+| Bazzite | Tested |
+| CachyOS | Tested |
+| Debian | Tested |
+| EndeavourOS | Tested |
+| Fedora | Tested |
+| Linux Mint | Tested |
+| Manjaro | Tested |
+| NixOS | Untested |
+| OpenSUSE Leap | Tested |
+| OpenSUSE Tumbleweed | Tested |
+| Pop!_OS | Tested |
+| Ubuntu | Tested |
+| Zorin OS | Tested |
+
+If your favorite distribution isn't listed, it may still be supported. This table only includes distributions that have built-in ASCII art.
+
+Most of the listed distributions have been tested, but bugs may still exist. Since Dfetch isn't continuously tested on every supported distribution, some issues may go unnoticed.
 
 ## How to make a custom ascii art
 
