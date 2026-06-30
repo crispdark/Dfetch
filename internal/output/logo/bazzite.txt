@@ -17,4 +17,5 @@ ${blue}      %#######${bright_white}==========${blue}#########
 ${blue}        #######################      
 ${blue}          ###################        
 ${blue}              ###########    
-accent_color: blue
+label_color: magenta
+userinfo_color: magenta

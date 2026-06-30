@@ -11,8 +11,9 @@ import (
 type Config struct {
 	EnabledModules []string
 
-	AccentColor string
-	CustomAscii string
+	LabelColor    string
+	UserinfoColor string
+	CustomAscii   string
 }
 
 func configPath() (string, error) {
@@ -45,8 +46,9 @@ func ReadConfig() (*Config, error) {
 	defer file.Close()
 
 	cfg := &Config{
-		AccentColor: "default",
-		CustomAscii: "default",
+		LabelColor:    "default",
+		UserinfoColor: "default",
+		CustomAscii:   "default",
 	}
 
 	scanner := bufio.NewScanner(file)
@@ -91,10 +93,12 @@ func ReadConfig() (*Config, error) {
 			value := strings.ToLower(strings.TrimSpace(line[idx+1:]))
 
 			switch key {
-			case "accent_color":
-				cfg.AccentColor = value
+			case "label_color":
+				cfg.LabelColor = value
 			case "custom_ascii":
 				cfg.CustomAscii = value
+			case "userinfo_color":
+				cfg.UserinfoColor = value
 			}
 
 			continue
@@ -158,8 +162,10 @@ func CreateConfigFile() error {
 				"}\n\n" +
 				"custom_ascii: default\n" +
 				"// Set a custom ASCII logo by providing the path to a text file containing it.\n\n" +
-				"accent_color: default\n" +
+				"label_color: default\n" +
 				"// Color used for the information labels.\n\n" +
+				"userinfo_color: default\n" +
+				"// Color of the userinfo module.\n\n" +
 				"// Available colors:\n" +
 				"// black, red, green, yellow, blue,\n" +
 				"// magenta, cyan, white,\n" +

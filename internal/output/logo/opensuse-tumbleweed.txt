@@ -18,4 +18,5 @@ ${green}                    ###     ##          ##
 ${green}                    ###    ##        .##
 ${green}                      `##,  ##      .:##
 ${green}                        '#############
-accent_color: green
+label_color: green
+userinfo_color: green

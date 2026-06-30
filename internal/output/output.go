@@ -16,34 +16,35 @@ func visibleLen(s string) int {
 	return utf8.RuneCountInString(clean)
 }
 
-func BuildInfoLines(sys modules.Modules, enabledModules []string, accent string) []string {
-	accent = config.GetColorCode(accent)
+func BuildInfoLines(sys modules.Modules, cfg config.Config, distroName string) []string {
+	cfg.LabelColor = config.GetColorCode(cfg.LabelColor)
+	cfg.UserinfoColor = config.GetColorCode(cfg.UserinfoColor)
 
 	info := map[string]string{
-		"userinfo":    fmt.Sprintf("%s%s", accent, sys.Userinfo),
-		"os":          field(accent, "OS", sys.DistroName),
-		"kernel":      field(accent, "Kernel", sys.Kernel),
-		"cpu":         field(accent, "CPU", sys.CPU),
-		"ram":         field(accent, "RAM", sys.RAM),
-		"swap":        field(accent, "Swap", sys.Swap),
-		"local_ip":    field(accent, "Local IP", sys.Local_IP),
-		"uptime":      field(accent, "Uptime", sys.Uptime),
-		"shell":       field(accent, "Shell", sys.Shell),
-		"terminal":    field(accent, "Terminal", sys.Terminal),
-		"battery":     field(accent, "Battery", sys.Battery),
-		"desktop":     field(accent, "Desktop", sys.Desktop),
-		"disk":        field(accent, "Disk", sys.Disk),
-		"time":        field(accent, "Time", sys.Time),
-		"date":        field(accent, "Date", sys.Date),
-		"packages":    field(accent, "Packages", sys.Packages),
-		"host":        field(accent, "Host", sys.Host),
-		"motherboard": field(accent, "Motherboard", sys.MotherBoard),
+		"userinfo":    fmt.Sprintf("%s%s", cfg.UserinfoColor, sys.Userinfo),
+		"os":          field(cfg.LabelColor, "OS", distroName),
+		"kernel":      field(cfg.LabelColor, "Kernel", sys.Kernel),
+		"cpu":         field(cfg.LabelColor, "CPU", sys.CPU),
+		"ram":         field(cfg.LabelColor, "RAM", sys.RAM),
+		"swap":        field(cfg.LabelColor, "Swap", sys.Swap),
+		"local_ip":    field(cfg.LabelColor, "Local IP", sys.Local_IP),
+		"uptime":      field(cfg.LabelColor, "Uptime", sys.Uptime),
+		"shell":       field(cfg.LabelColor, "Shell", sys.Shell),
+		"terminal":    field(cfg.LabelColor, "Terminal", sys.Terminal),
+		"battery":     field(cfg.LabelColor, "Battery", sys.Battery),
+		"desktop":     field(cfg.LabelColor, "Desktop", sys.Desktop),
+		"disk":        field(cfg.LabelColor, "Disk", sys.Disk),
+		"time":        field(cfg.LabelColor, "Time", sys.Time),
+		"date":        field(cfg.LabelColor, "Date", sys.Date),
+		"packages":    field(cfg.LabelColor, "Packages", sys.Packages),
+		"host":        field(cfg.LabelColor, "Host", sys.Host),
+		"motherboard": field(cfg.LabelColor, "Motherboard", sys.MotherBoard),
 		"emptyline":   "",
 	}
 
-	lines := make([]string, 0, len(enabledModules))
+	lines := make([]string, 0, len(cfg.EnabledModules))
 
-	for _, key := range enabledModules {
+	for _, key := range cfg.EnabledModules {
 		k := strings.ToLower(strings.TrimSpace(key))
 		if v, ok := info[k]; ok {
 			lines = append(lines, v)

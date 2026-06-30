@@ -1,21 +1,22 @@
-                             ${bright_yellow}....
-              ${bright_yellow}.',:clooo:  ${bright_yellow}.:looooo:.
-           ${bright_yellow}.;looooooooc  ${bright_yellow}.oooooooooo'
-        ${bright_yellow}.;looooool:,''.  ${bright_yellow}:ooooooooooc
-       ${bright_yellow};looool;.         ${bright_yellow}'oooooooooo,
-      ${bright_yellow};clool'             ${bright_yellow}.cooooooc.  ${bright_yellow},,
-         ${bright_yellow}...                ${bright_yellow}......  ${bright_yellow}.:oo,
-  ${bright_yellow}.;clol:,.                        ${bright_yellow}.loooo'
- ${bright_yellow}:ooooooooo,                        ${bright_yellow}'ooool
-${bright_yellow}'ooooooooooo.                        ${bright_yellow}loooo.
-${bright_yellow}'ooooooooool                         ${bright_yellow}coooo.
- ${bright_yellow},loooooooc.                        ${bright_yellow}.loooo.
-   ${bright_yellow}.,;;;'.                          ${bright_yellow};ooooc
-       ${bright_yellow}...                         ${bright_yellow},ooool.
-    ${bright_yellow}.cooooc.              ${bright_yellow}..',,'.  ${bright_yellow}.cooo.
-      ${bright_yellow};ooooo:.           ${bright_yellow};oooooooc.  ${bright_yellow}:l.
-       ${bright_yellow}.coooooc,..      ${bright_yellow}coooooooooo.
-         ${bright_yellow}.:ooooooolc:. ${bright_yellow}.ooooooooooo'
-           ${bright_yellow}.':loooooo;  ${bright_yellow},oooooooooc
-               ${bright_yellow}..';::c'  ${bright_yellow}.;loooo:'
-accent_color: bright_yellow
+${yellow}             --+oossssssoo+--
+${yellow}         .:+ssssssssssssssssss+:.
+${yellow}       -+ssssssssssssssssssyyssss+-
+${yellow}     .ossssssssssssssssssd${bright_white}MMMNy${yellow}sssso.
+${yellow}   /sssssssssss${bright_white}hdmmNNmmyNMMMMh${yellow}ssssss/
+${yellow}  +sssssssss${bright_white}hm${yellow}yd${bright_white}MMMMMMMNddddy${yellow}ssssssss+
+${yellow} /ssssssss${bright_white}hNMMM${yellow}yh${bright_white}hyyyyhmNMMMNh${yellow}ssssssss/
+${yellow}.ssssssss${bright_white}dMMMNh${yellow}ssssssssss${bright_white}hNMMMd${yellow}ssssssss.
+${yellow}+ssss${bright_white}hhhyNMMNy${yellow}ssssssssssss${bright_white}yNMMMy${yellow}sssssss+
+${yellow}oss${bright_white}yNMMMNyMMh${yellow}ssssssssssssss${bright_white}hmmmh${yellow}ssssssso
+${yellow}oss${bright_white}yNMMMNyMMh${yellow}sssssssssssssshmmmhssssssso
+${yellow}+ssss${bright_white}hhhyNMMNy${yellow}ssssssssssss${bright_white}yNMMMy${yellow}sssssss+
+${yellow}.ssssssss${bright_white}dMMMNh${yellow}ssssssssss${bright_white}hNMMMd${yellow}ssssssss.
+${yellow} /ssssssss${bright_white}hNMMM${yellow}yh${bright_white}hyyyyhdNMMMNh${yellow}ssssssss/
+${yellow}  +sssssssss${bright_white}dm${yellow}yd${bright_white}MMMMMMMMddddy${yellow}ssssssss+
+${yellow}   /sssssssssss${bright_white}hdmNNNNmyNMMMMh${yellow}ssssss/
+${yellow}    .ossssssssssssssssss${bright_white}dMMMNy${yellow}sssso.
+${yellow}     -+sssssssssssssssss${bright_white}yyy${yellow}ssss+-
+${yellow}       `:+ssssssssssssssssss+:´
+${yellow}           --+oossssssoo+--
+label_color: red
+userinfo_color: red

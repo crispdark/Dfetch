@@ -3,16 +3,17 @@ ${blue}       .osssssssssssssssssssssso.
 ${blue}      .+oooooooooooooooooooooooo+.
 ${blue}
 ${blue}
-${blue}  `::::::::::::::::::::::.         .:`
+${blue}  `######################.         .:`
 ${blue} `+ssssssssssssssssss+:.`     `.:+ssso`
 ${blue}.ossssssssssssssso/.       `-+ossssssso.
 ${blue}ssssssssssssso/-`      `-/osssssssssssss
 ${blue}.ossssssso/-`      .-/ossssssssssssssso.
 ${blue} `+sss+:.      `.:+ssssssssssssssssss+`
-${blue}  `:.         .::::::::::::::::::::::`
+${blue}  `:.         .######################`
 ${blue}
 ${blue}
 ${blue}      .+oooooooooooooooooooooooo+.
 ${blue}       -osssssssssssssssssssssso-
 ${blue}        `osssssssssssssssssssso`
-accent_color: blue
+label_color: bright_blue
+userinfo_color: bright_blue

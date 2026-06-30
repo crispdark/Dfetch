@@ -13,4 +13,5 @@ ${red}   `Y$$.
 ${red}     `$$b.
 ${red}       `Y$$b.
 ${red}          `"Y$b._
-accent_color: red
+label_color: red
+userinfo_color: red

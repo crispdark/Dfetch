@@ -3,8 +3,6 @@ package modules
 import "fmt"
 
 type Modules struct {
-	DistroName  string
-	ID          string
 	Kernel      string
 	CPU         string
 	RAM         string
@@ -28,8 +26,6 @@ type Modules struct {
 
 func CollectSystemInfo(enabledModules []string) Modules {
 	var sys Modules
-
-	sys.DistroName, sys.ID = Distro()
 
 	for _, module := range enabledModules {
 		switch module {

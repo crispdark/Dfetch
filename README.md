@@ -48,7 +48,7 @@ modules {
     uptime
     shell
     terminal
-    de
+    desktop
     packages
     cpu
     ram
@@ -64,8 +64,11 @@ modules {
 custom_ascii: default
 // Set a custom ASCII logo by providing the path to a text file containing it.
 
-accent_color: default
+label_color: default
 // Color used for the information labels.
+
+userinfo_color: default
+// Color of the userinfo module.
 
 // Available colors:
 // black, red, green, yellow, blue,

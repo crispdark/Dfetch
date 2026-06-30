@@ -18,4 +18,5 @@ ${magenta}    /////${bright_white}767676767676767676767${magenta}/////
 ${magenta}      ///////////////////////////
 ${magenta}         /////////////////////
 ${magenta}             /////////////
-accent_color: magenta
+label_color: magenta
+userinfo_color: magenta

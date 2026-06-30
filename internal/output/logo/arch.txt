@@ -16,4 +16,5 @@ ${blue}    /ossssssss/        +ssssooo/-
 ${blue}  `/ossssso+/:-        -:/+osssso+-
 ${blue} `+sso+:-`                 `.-/+oso:
 ${blue}`++:.                           `-/+/
-accent_color: blue
+label_color: blue
+userinfo_color: blue

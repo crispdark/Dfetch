@@ -1,6 +1,6 @@
              ${bright_white}...-:::::-...
-${bright_white}          .-MMMMMMMMMMMMMMM-.
-${bright_white}      .-MMMM${green}`..-:::::::-..`${bright_white}MMMM-.
+${bright_white}         .-MMMMMMMMMMMMMMMMM-.
+${bright_white}      .-MMMM${green}`.-=:::::::=-.`${bright_white}MMMM-.
 ${bright_white}    .:MMMM${green}.:MMMMMMMMMMMMMMM:.${bright_white}MMMM:.
 ${bright_white}   -MMM${green}-M---MMMMMMMMMMMMMMMMMMM.${bright_white}MMM-
 ${bright_white}  :MMM${green}:MM`  :MMMM:....::-...-MMMM:${bright_white}MMM:
@@ -15,6 +15,7 @@ ${bright_white}  :MMM${green}:MMM:`                `:MMM:${bright_white}MMM:
 ${bright_white}   .MMM${green}.MMMM:--------------:MMMM.${bright_white}MMM.
 ${bright_white}     '-MMMM${green}.-MMMMMMMMMMMMMMM-.${bright_white}MMMM-'
 ${bright_white}       '.-MMMM${green}``--:::::--``${bright_white}MMMM-.'
-${bright_white}            '-MMMMMMMMMMMMM-'
+${bright_white}           '-MMMMMMMMMMMMMMM-'
 ${bright_white}               ``-:::::-``
-accent_color: green
+label_color: green
+userinfo_color: blue

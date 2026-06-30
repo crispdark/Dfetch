@@ -8,6 +8,9 @@ import (
 )
 
 func main() {
+	// Get distro name
+	distroName, id := modules.Distro()
+
 	// Read or create config file
 	cfg, err := config.ReadConfig()
 	if err != nil {
@@ -18,22 +21,10 @@ func main() {
 	sys := modules.CollectSystemInfo(cfg.EnabledModules)
 
 	// Prepare the ASCII art
-	asciiLines, accentColor := output.LoadASCII(
-		output.LogoFS,
-		sys.ID,
-		cfg.CustomAscii,
-	)
-
-	if cfg.AccentColor == "" || cfg.AccentColor == "default" {
-		cfg.AccentColor = accentColor
-	}
+	asciiLines := output.LoadASCII(output.LogoFS, id, cfg)
 
 	// Build the info lines
-	infoLines := output.BuildInfoLines(
-		sys,
-		cfg.EnabledModules,
-		accentColor,
-	)
+	infoLines := output.BuildInfoLines(sys, *cfg, distroName)
 
 	// Put everything together and print it
 	output.PrintOutput(asciiLines, infoLines)

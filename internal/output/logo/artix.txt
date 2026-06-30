@@ -20,4 +20,5 @@ ${cyan}   -----...#----          -----  .---
 ${cyan}  ----..----              ------#  .--  
 ${cyan} ---.--                         ----..- 
 ${cyan}---                                  ---
-accent_color: cyan
+label_color: cyan
+userinfo_color: cyan
