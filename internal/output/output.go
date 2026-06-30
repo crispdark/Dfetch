@@ -19,7 +19,7 @@ func visibleLen(s string) int {
 func BuildInfoLines(sys modules.Modules, cfg config.Config, distroName string) []string {
 	cfg.LabelColor = config.GetColorCode(cfg.LabelColor)
 	cfg.UserinfoColor = config.GetColorCode(cfg.UserinfoColor)
-	cfg.Info_color = config.GetColorCode(cfg.Info_color)
+	cfg.InfoColor = config.GetColorCode(cfg.InfoColor)
 
 	fields := map[string]struct {
 		label string
@@ -50,7 +50,7 @@ func BuildInfoLines(sys modules.Modules, cfg config.Config, distroName string) [
 	}
 
 	for key, f := range fields {
-		info[key] = field(cfg.LabelColor, cfg.Info_color, f.label, f.value)
+		info[key] = field(cfg.LabelColor, cfg.InfoColor, f.label, f.value)
 	}
 
 	lines := make([]string, 0, len(cfg.EnabledModules))

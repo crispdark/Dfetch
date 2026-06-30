@@ -14,7 +14,7 @@ type Config struct {
 	LabelColor    string
 	UserinfoColor string
 	CustomAscii   string
-	Info_color    string
+	InfoColor     string
 }
 
 func configPath() (string, error) {
@@ -50,7 +50,7 @@ func ReadConfig() (*Config, error) {
 		LabelColor:    "default",
 		UserinfoColor: "default",
 		CustomAscii:   "default",
-		Info_color:    "default",
+		InfoColor:     "default",
 	}
 
 	scanner := bufio.NewScanner(file)
@@ -97,7 +97,7 @@ func ReadConfig() (*Config, error) {
 			case "userinfo_color":
 				cfg.UserinfoColor = value
 			case "info_color":
-				cfg.Info_color = value
+				cfg.InfoColor = value
 			}
 
 			continue
@@ -136,8 +136,8 @@ func CreateConfigFile() error {
 		var config strings.Builder
 
 		config.WriteString(
-			"// Lines starting with `//` are comments and are ignored by Dfetch.\n" +
-				"// In the modules section, you can change which information is displayed and in what order.\n\n" +
+			"// Everything after `//` is a comment and is ignored by Dfetch.\n" +
+				"// In the modules section, you can change whhat information is displayed and in what order.\n\n" +
 				"// Insert empty lines in the modules block to get empty lines in the final output.\n" +
 				"modules {\n" +
 				"    userinfo\n" +
