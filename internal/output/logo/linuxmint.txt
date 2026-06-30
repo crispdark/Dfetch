@@ -18,4 +18,4 @@ ${bright_white}       '.-MMMM${green}``--:::::--``${bright_white}MMMM-.'
 ${bright_white}           '-MMMMMMMMMMMMMMM-'
 ${bright_white}               ``-:::::-``
 label_color: green
-userinfo_color: blue
+userinfo_color: green

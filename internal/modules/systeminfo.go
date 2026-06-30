@@ -5,7 +5,7 @@ import "fmt"
 type Modules struct {
 	Kernel      string
 	CPU         string
-	RAM         string
+	Memory      string
 	Swap        string
 	Userinfo    string
 	Local_IP    string
@@ -42,8 +42,8 @@ func CollectSystemInfo(enabledModules []string) Modules {
 		case "cpu":
 			sys.CPU = Cpu()
 
-		case "ram":
-			sys.RAM = RAM()
+		case "memory":
+			sys.Memory = Memory()
 
 		case "local_ip":
 			sys.Local_IP = Local_IP()

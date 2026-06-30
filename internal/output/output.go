@@ -25,7 +25,7 @@ func BuildInfoLines(sys modules.Modules, cfg config.Config, distroName string) [
 		"os":          field(cfg.LabelColor, "OS", distroName),
 		"kernel":      field(cfg.LabelColor, "Kernel", sys.Kernel),
 		"cpu":         field(cfg.LabelColor, "CPU", sys.CPU),
-		"ram":         field(cfg.LabelColor, "RAM", sys.RAM),
+		"memory":      field(cfg.LabelColor, "Memory", sys.Memory),
 		"swap":        field(cfg.LabelColor, "Swap", sys.Swap),
 		"local_ip":    field(cfg.LabelColor, "Local IP", sys.Local_IP),
 		"uptime":      field(cfg.LabelColor, "Uptime", sys.Uptime),

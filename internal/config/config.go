@@ -151,7 +151,7 @@ func CreateConfigFile() error {
 				"    desktop\n" +
 				"    packages\n" +
 				"    cpu\n" +
-				"    ram\n" +
+				"    memory\n" +
 				"    swap\n" +
 				"    disk\n" +
 				"    motherboard\n" +
