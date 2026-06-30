@@ -4,12 +4,12 @@ Dfetch is a lightweight system information tool focused on clean output, fast st
 
 <table>
   <tr>
-    <td><img src="image/output_example_1.png" alt="Output example Pop os" width="100%"></td>
-    <td><img src="image/output_example_2.png" alt="output example Linux MInt" width="100%"></td>
+    <td><img src="image/output_example_1.png" alt="Output example Endeavour OS" width="100%"></td>
+    <td><img src="image/output_example_2.png" alt="output example Nix OS" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="image/output_example_3.png" alt="Output example Debian" width="100%"></td>
-    <td><img src="image/output_example_4.png" alt="Output example Fedora" width="100%"></td>
+    <td><img src="image/output_example_3.png" alt="Output example Manjaro" width="100%"></td>
+    <td><img src="image/output_example_4.png" alt="Output example Zorin OS" width="100%"></td>
   </tr>
 </table>
 
