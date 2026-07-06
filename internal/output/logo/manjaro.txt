@@ -12,5 +12,5 @@ ${bright_green}########  ########  ########
 ${bright_green}########  ########  ########
 ${bright_green}########  ########  ########
 ${bright_green}########  ########  ########
-label_color: bright_green
+label_color: bright_blue
 userinfo_color: bright_blue

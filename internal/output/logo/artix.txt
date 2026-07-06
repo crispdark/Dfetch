@@ -1,24 +1,22 @@
-${cyan}                   --                   
-${cyan}                   --                   
-${cyan}                  -.--                  
-${cyan}                 -+.---                 
-${cyan}                --#.----                
-${cyan}               --+ .-----               
-${cyan}              ----  .-----              
-${cyan}             ---+###  .----             
-${cyan}               ----+## ..---            
-${cyan}                   ----# .---           
-${cyan}          ---         ---#..--          
-${cyan}         ----.---        --+.--         
-${cyan}         ------..-----      ---         
-${cyan}        ---------. ##-----              
-${cyan}       -----------.   ---------         
-${cyan}      ----------.   +##+------          
-${cyan}     --------..  ###-----       ---     
-${cyan}    ------... #+-----        ---.---    
-${cyan}   -----...#----          -----  .---   
-${cyan}  ----..----              ------#  .--  
-${cyan} ---.--                         ----..- 
-${cyan}---                                  ---
+${cyan}                   '
+${cyan}                  'o'
+${cyan}                 'ooo'
+${cyan}                'ooxoo'
+${cyan}               'ooxxxoo'
+${cyan}              'oookkxxoo'
+${cyan}             'oiioxkkxxoo'
+${cyan}            ':;:iiiioxxxoo'
+${cyan}               `'.;::ioxxoo'
+${cyan}          '-.      `':;jiooo'
+${cyan}         'oooio-..     `'i:io'
+${cyan}        'ooooxxxxoio:,.   `'-;'
+${cyan}       'ooooxxxxxkkxoooIi:-.  `'
+${cyan}      'ooooxxxxxkkkkxoiiiiiji'
+${cyan}     'ooooxxxxxkxxoiiii:'`     .i'
+${cyan}    'ooooxxxxxoi:::'`       .;ioxo'
+${cyan}   'ooooxooi::'`         .:iiixkxxo'
+${cyan}  'ooooi:'`                `'';ioxxo'
+${cyan} 'i:'`                          '':io'
+${cyan}'`                                   `'
 label_color: cyan
 userinfo_color: cyan

@@ -1,22 +1,22 @@
-${magenta}             /////////////
-${magenta}         /////////////////////
-${magenta}      ///////${bright_white}*767${magenta}////////////////
-${magenta}    //////${bright_white}7676767676*${magenta}//////////////
-${magenta}   /////${bright_white}76767${magenta}//${bright_white}7676767${magenta}//////////////
-${magenta}  /////${bright_white}767676${magenta}///${bright_white}*76767${magenta}///////////////
-${magenta} ///////${bright_white}767676${magenta}///${bright_white}76767${magenta}.///${bright_white}7676*${magenta}///////
-${magenta}/////////${bright_white}767676${magenta}//${bright_white}76767${magenta}///${bright_white}767676${magenta}////////
-${magenta}//////////${bright_white}76767676767${magenta}////${bright_whit{bright_white}7676${magenta}///////${bright_white}76${magenta}////////////
-${magenta}///////////////${brige}76767${magenta}/////////
-${magenta}///////////${bright_white}76767676${magenta}//////${bright_white}7676${magenta}//////////
-${magenta}/////////////${bright_white}7676${magenta}////////${bright_white}767${magenta}///////////
-${magenta}//////////////$ht_white}7676${magenta}////////////////////
-${magenta} ///////////////${bright_white}7676${magenta}///${bright_white}767${magenta}////////////
-${magenta}  //////////////////////${bright_white}'${magenta}////////////
-${magenta}   //////${bright_white}.7676767676767676767,${magenta}//////
-${magenta}    /////${bright_white}767676767676767676767${magenta}/////
-${magenta}      ///////////////////////////
-${magenta}         /////////////////////
-${magenta}             /////////////
+${bright_magenta}             /////////////
+${bright_magenta}         /////////////////////
+${bright_magenta}      ///////${bright_white}*767${bright_magenta}////////////////
+${bright_magenta}    //////${bright_white}7676767676*${bright_magenta}//////////////
+${bright_magenta}   /////${bright_white}76767${bright_magenta}//${bright_white}7676767${bright_magenta}//////////////
+${bright_magenta}  /////${bright_white}767676${bright_magenta}///${bright_white}*76767${bright_magenta}///////////////
+${bright_magenta} ///////${bright_white}767676${bright_magenta}///${bright_white}76767${bright_magenta}.///${bright_white}7676*${bright_magenta}///////
+${bright_magenta}/////////${bright_white}767676${bright_magenta}//${bright_white}76767${bright_magenta}///${bright_white}767676${bright_magenta}////////
+${bright_magenta}//////////${bright_white}76767676767${bright_magenta}////${bright_white}76767${bright_magenta}/////////
+${bright_magenta}///////////${bright_white}76767676${bright_magenta}//////${bright_white}7676${bright_magenta}//////////
+${bright_magenta}////////////,${bright_white}7676${bright_magenta},///////${bright_white}767${bright_magenta}///////////
+${bright_magenta}//////////////${bright_white}7676${bright_magenta}///////${bright_white}76${bright_magenta}////////////
+${bright_magenta}///////////////${bright_white}7676${bright_magenta}////////////////////
+${bright_magenta} ///////////////${bright_white}7676${bright_magenta}///${bright_white}767${bright_magenta}////////////
+${bright_magenta}  ///////////////////////////////////
+${bright_magenta}   //////${bright_white}.7676767676767676767,${bright_magenta}//////
+${bright_magenta}    /////${bright_white}767676767676767676767${bright_magenta}/////
+${bright_magenta}      ///////////////////////////
+${bright_magenta}         /////////////////////
+${bright_magenta}             /////////////
 label_color: magenta
 userinfo_color: magenta
