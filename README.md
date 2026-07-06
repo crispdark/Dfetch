@@ -33,62 +33,7 @@ To install Dfetch, visit [the releases page](https://github.com/David17c/Dfetch/
 
 ### For NixOS
 
-You can install Dfetch on NixOS using the provided flake.
-
-**Option 1: Using flakes in your system configuration**
-
-Add this to your `flake.nix` inputs:
-
-```nix
-inputs = {
-  dfetch.url = "github:crispdark/Dfetch";
-};
-```
-
-Then add to your `environment.systemPackages`:
-
-```nix
-environment.systemPackages = with pkgs; [
-  dfetch.packages.${pkgs.stdenv.hostPlatform.system}.default
-];
-```
-
-After modifying your configuration, rebuild with:
-
-```bash
-sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
-```
-
-**Option 2: Install directly from flake**
-
-```bash
-nix run github:crispdark/Dfetch
-```
-
-**Option 3: Using the Dfetch NixOS module**
-
-Add the flake-module to your system configuration for better integration and customization:
-
-```nix
-imports = [
-  inputs.dfetch.nixosModules.default
-];
-
-services.dfetch = {
-  enable = true;
-  config = {
-    # Your custom configuration here
-  };
-};
-```
-
-After modifying your configuration, rebuild with:
-
-```bash
-sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
-```
-
-See the [NixOS Module section](#nixos-module-customization) for more details.
+For detailed NixOS installation and configuration instructions, see [NIXOS.md](NIXOS.md).
 
 ## Customization
 
@@ -141,42 +86,6 @@ info_color: default
 // bright_cyan, bright_white
 ```
 
-### NixOS Module Customization
-
-When using the NixOS module, you can customize Dfetch through your system configuration without manually managing the config file:
-
-```nix
-services.dfetch = {
-  enable = true;
-  
-  # Specify which modules to display
-  modules = [
-    "userinfo"
-    "os"
-    "kernel"
-    "uptime"
-    "packages"
-    "memory"
-  ];
-  
-  # Set colors
-  labelColor = "green";
-  userinfoColor = "green";
-  infoColor = "default";
-  
-  # Custom ASCII art (path in nix store)
-  customAscii = null; # or path to your ASCII file
-};
-```
-
-After modifying your configuration, rebuild with:
-
-```bash
-sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
-```
-
-The module automatically generates the configuration file at `~/.config/Dfetch/Dfetch.conf` with your specified options.
-
 ## Supported Linux distributions
 
 | Distribution | Status |
@@ -190,7 +99,7 @@ The module automatically generates the configuration file at `~/.config/Dfetch/D
 | Fedora | Tested |
 | Linux Mint | Tested |
 | Manjaro | Tested |
-| NixOS | Untested |
+| NixOS | Tested |
 | OpenSUSE Leap | Tested |
 | OpenSUSE Tumbleweed | Tested |
 | Pop!_OS | Tested |
