@@ -49,8 +49,14 @@ Then add to your `environment.systemPackages`:
 
 ```nix
 environment.systemPackages = with pkgs; [
-  dfetch.packages.${system}.default
+  dfetch.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
+```
+
+After modifying your configuration, rebuild with:
+
+```bash
+sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
 ```
 
 **Option 2: Install directly from flake**
@@ -74,6 +80,12 @@ services.dfetch = {
     # Your custom configuration here
   };
 };
+```
+
+After modifying your configuration, rebuild with:
+
+```bash
+sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
 ```
 
 See the [NixOS Module section](#nixos-module-customization) for more details.
@@ -155,6 +167,12 @@ services.dfetch = {
   # Custom ASCII art (path in nix store)
   customAscii = null; # or path to your ASCII file
 };
+```
+
+After modifying your configuration, rebuild with:
+
+```bash
+sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
 ```
 
 The module automatically generates the configuration file at `~/.config/Dfetch/Dfetch.conf` with your specified options.
