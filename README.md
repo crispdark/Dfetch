@@ -15,7 +15,7 @@ Dfetch is a lightweight system information tool focused on clean output, fast st
 
 ## Why use this?
 
-Dfetch is designed for those who want a simple system information tool with sensible defaults, clean output, and fast startup times. Rather than prioritizing extensive customization, Dfetch focuses on being lightweight, easy to configure, and pleasant to use.
+Dfetch is designed for those who want a simple system information tool with sensible defaults, clean output, and fast startup times. Rather than prioritizing extensive customization, Dfetch focuses on providing useful information in a readable format with minimal startup overhead.
 
 ## Features
 
@@ -30,6 +30,10 @@ Dfetch is designed for those who want a simple system information tool with sens
 ## Installation
 
 To install Dfetch, visit [the releases page](https://github.com/David17c/Dfetch/releases) and either download the package for your operating system, download a prebuilt binary, or build Dfetch from source.
+
+### For NixOS
+
+For detailed NixOS installation and configuration instructions, see [NIXOS.md](NIXOS.md).
 
 ## Customization
 
@@ -95,7 +99,7 @@ info_color: default
 | Fedora | Tested |
 | Linux Mint | Tested |
 | Manjaro | Tested |
-| NixOS | Untested |
+| NixOS | Tested |
 | OpenSUSE Leap | Tested |
 | OpenSUSE Tumbleweed | Tested |
 | Pop!_OS | Tested |
@@ -136,12 +140,12 @@ You can then optionally add colors by using color tags. For a list of supported 
 
 ```
              ${bright_white}...-:::::-...
-${bright_white}         .-MMMMMMMMMMMMMMMMM-.
-${bright_white}      .-MMMM${green}`.-=:::::::=-.`${bright_white}MMMM-.
-${bright_white}    .:MMMM${green}.:MMMMMMMMMMMMMMM:.${bright_white}MMMM:.
-${bright_white}   -MMM${green}-M---MMMMMMMMMMMMMMMMMMM.${bright_white}MMM-
-${bright_white}  :MMM${green}:MM`  :MMMM:....::-...-MMMM:${bright_white}MMM:
-${bright_white} :MMM${green}:MMM`  :MM:`  ``    ``  `:MMM:${bright_white}MMM:
+${bright_white}        .-MMMMMMMMMMMMMMMMM-.
+${bright_white}     .-MMMM${green}`.-=:::::::=-.`${bright_white}MMMM-.
+${bright_white}   .:MMMM${green}.:MMMMMMMMMMMMMMM:.${bright_white}MMMM:.
+${bright_white}  -MMM${green}-M---MMMMMMMMMMMMMMMMMMM.${bright_white}MMM-
+${bright_white} :MMM${green}:MM`  :MMMM:....::-...-MMMM:${bright_white}MMM:
+${bright_white}:MMM${green}:MMM`  :MM:`  ``    ``  `:MMM:${bright_white}MMM:
 ${bright_white}.MMM${green}.MMMM`  :MM.  -MM.  .MM-  `MMMM.${bright_white}MMM.
 ${bright_white}:MMM${green}:MMMM`  :MM.  -MM-  .MM:  `MMMM-${bright_white}MMM:
 ${bright_white}:MMM${green}:MMMM`  :MM.  -MM-  .MM:  `MMMM:${bright_white}MMM:
