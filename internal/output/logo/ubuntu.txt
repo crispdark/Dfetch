@@ -18,5 +18,5 @@ ${yellow}    .ossssssssssssssssss${bright_white}dMMMNy${yellow}sssso.
 ${yellow}     -+sssssssssssssssss${bright_white}yyy${yellow}ssss+-
 ${yellow}       `:+ssssssssssssssssss+:´
 ${yellow}           --+oossssssoo+--
-label_color: red
-userinfo_color: red
+label_color: yellow
+userinfo_color: yellow

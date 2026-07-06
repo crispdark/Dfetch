@@ -1,6 +1,6 @@
-${blue}                  -`
-${blue}                 .o+`
-${blue}                `ooo/
+${blue}                  -
+${blue}                 .o+
+${blue}                `ooo\
 ${blue}               `+oooo:
 ${blue}              `+oooooo:
 ${blue}              -+oooooo+:
