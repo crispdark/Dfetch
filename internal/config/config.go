@@ -160,9 +160,9 @@ func CreateConfigFile() error {
 				"    // date\n" +
 				"}\n\n" +
 				"custom_ascii: default\n" +
-				"// Set a custom ASCII logo by providing the path to a text file containing it.\n\n" +
+				"// Set a custom ASCII logo by providing the path to the text file containing it.\n\n" +
 				"label_color: default\n" +
-				"// Color used for the information labels.\n\n" +
+				"// Color of the information labels.\n\n" +
 				"userinfo_color: default\n" +
 				"// Color of the userinfo module.\n\n" +
 				"info_color: default\n" +
