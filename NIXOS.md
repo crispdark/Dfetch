@@ -1,152 +1,101 @@
 # Dfetch on NixOS
 
-This document provides detailed instructions for installing and configuring Dfetch on NixOS.
+This repository provides a Nix flake for building, running, and installing Dfetch on NixOS and other Linux systems with Nix.
 
-## Installation Methods
+## Use the Flake
 
-### Method 1: Using Flakes in Your System Configuration
-
-Add Dfetch to your `flake.nix`:
+Add Dfetch to your flake inputs:
 
 ```nix
-inputs = {
-  dfetch.url = "github:crispdark/Dfetch";
-};
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    dfetch.url = "github:David17c/Dfetch";
+  };
+}
 ```
 
-Then add to your `environment.systemPackages`:
+Install the package in your NixOS configuration:
 
 ```nix
-environment.systemPackages = with pkgs; [
-  dfetch.packages.${pkgs.stdenv.hostPlatform.system}.default
-];
-```
+{ inputs, pkgs, ... }:
 
-Rebuild your system:
-
-```bash
-sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
-```
-
-### Method 2: Direct Flake Execution
-
-Run Dfetch directly from the flake without installing it:
-
-```bash
-nix run github:crispdark/Dfetch
-```
-
-### Method 3: Using the NixOS Module
-
-For more advanced configuration and automatic setup, use the NixOS module.
-
-Add to your `flake.nix` inputs:
-
-```nix
-inputs = {
-  dfetch.url = "github:crispdark/Dfetch";
-};
-```
-
-Add to your NixOS configuration imports:
-
-```nix
-imports = [
-  inputs.dfetch.nixosModules.default
-];
-```
-
-Enable and configure Dfetch:
-
-```nix
-services.dfetch = {
-  enable = true;
-  
-  # Customize which modules to display
-  modules = [
-    "userinfo"
-    "os"
-    "kernel"
-    "uptime"
-    "packages"
-    "memory"
-    "disk"
+{
+  environment.systemPackages = [
+    inputs.dfetch.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
-  
-  # Set custom colors
-  labelColor = "green";
-  userinfoColor = "bright_green";
-  infoColor = "default";
-  
-  # Optional: use custom ASCII art
-  customAscii = null;
-};
+}
 ```
 
-Rebuild your system:
+Then rebuild:
 
 ```bash
-sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
+sudo nixos-rebuild switch --flake /path/to/your/flake#your-hostname
 ```
 
-## NixOS Module Options
+## Use the NixOS Module
 
-### Available Modules
-
-- `userinfo` - User and hostname information
-- `os` - Operating system name
-- `host` - Hostname
-- `kernel` - Kernel version
-- `uptime` - System uptime
-- `shell` - Current shell
-- `terminal` - Terminal application
-- `desktop` - Desktop environment
-- `packages` - Package manager info (now with NixOS support!)
-- `cpu` - CPU information
-- `memory` - Memory usage
-- `swap` - Swap memory usage
-- `disk` - Disk usage
-- `motherboard` - Motherboard information
-- `local_ip` - Local IP address
-- `battery` - Battery status (if available)
-- `time` - Current time
-- `date` - Current date
-
-### Available Colors
-
-```
-black, red, green, yellow, blue,
-magenta, cyan, white,
-bright_black, bright_red,
-bright_green, bright_yellow,
-bright_blue, bright_magenta,
-bright_cyan, bright_white
-```
-
-## Packages Support
-
-Dfetch now has full support for NixOS package detection! The `packages` module will automatically detect and count packages from your Nix profile using `nix profile list`.
-
-Add `packages` to your modules list to display package count:
+The flake also exposes a small NixOS module that installs Dfetch through `programs.dfetch`.
 
 ```nix
-services.dfetch = {
-  enable = true;
-  
-  modules = [
-    "userinfo"
-    "os"
-    "packages"  # Shows Nix package count
-    "memory"
-  ];
-};
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    dfetch.url = "github:David17c/Dfetch";
+  };
+
+  outputs = { self, nixpkgs, dfetch, ... }: {
+    nixosConfigurations.your-hostname = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        dfetch.nixosModules.default
+        {
+          programs.dfetch.enable = true;
+        }
+      ];
+    };
+  };
+}
 ```
 
-## Configuration File
+## Run Without Installing
 
-The module automatically generates the configuration file at `~/.config/Dfetch/Dfetch.conf`. You can also manually edit this file:
+You can run Dfetch directly from the flake:
 
+```bash
+nix run github:David17c/Dfetch
 ```
+
+## Development Shell
+
+Enter a shell with Go and Git available:
+
+```bash
+nix develop github:David17c/Dfetch
+```
+
+## Package Counting on Nix
+
+When the `packages` module is enabled in Dfetch's config, Nix package counting checks the standard system and user profile paths and combines their results. Dfetch queries each profile's Nix requisites and filters them with the same package-oriented rules used by Fastfetch, so it is not limited to executable links in `bin`.
+
+- `/run/current-system` for the active NixOS system profile
+- `~/.nix-profile` for the user's default Nix profile
+- `$XDG_STATE_HOME/nix/profile` or `~/.local/state/nix/profile` for the newer user profile location
+- `/etc/profiles/per-user/$USER` for the per-user profile
+
+Missing profile directories are ignored, so Dfetch still works on systems that only have some of these paths.
+
+## Dfetch Configuration
+
+Dfetch reads its runtime configuration from:
+
+```text
+~/.config/dfetch/dfetch.conf
+```
+
+Include `packages` in the modules block to show package information:
+
+```text
 modules {
     userinfo
     os
@@ -155,65 +104,6 @@ modules {
     memory
     disk
 }
-
-label_color: green
-userinfo_color: bright_green
-info_color: default
-custom_ascii: default
 ```
 
-## Custom ASCII Art
-
-To use custom ASCII art on NixOS:
-
-1. Create your ASCII art file:
-
-```bash
-mkdir -p ~/.config/Dfetch
-vim ~/.config/Dfetch/custom_logo.txt
-```
-
-2. Update your configuration to use it:
-
-```nix
-services.dfetch = {
-  enable = true;
-  customAscii = "/home/youruser/.config/Dfetch/custom_logo.txt";
-};
-```
-
-Or in the config file:
-
-```
-custom_ascii: /home/youruser/.config/Dfetch/custom_logo.txt
-```
-
-## Troubleshooting
-
-### Dfetch not found after rebuild
-
-Make sure you've added it to `environment.systemPackages` or enabled the service module. Then rebuild:
-
-```bash
-sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
-```
-
-### Packages showing "unknown"
-
-Ensure `nix` command is available in your PATH. This is usually the case on NixOS by default.
-
-### Module configuration not applied
-
-If you modify the module options, remember to rebuild:
-
-```bash
-sudo nixos-rebuild switch --flake /path/to/your/flake#yourHostname
-```
-
-### Font/Color issues in terminal
-
-Make sure your terminal supports ANSI colors. Most modern terminals do. If colors look wrong, try a different terminal or adjust the color settings in your Dfetch configuration.
-
-## More Information
-
-For general Dfetch usage and configuration, see the [main README](README.md).
+For general configuration and usage, see the main [README](README.md).

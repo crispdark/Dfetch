@@ -2,10 +2,14 @@ package modules
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"os"
 	"os/exec"
+	"path/filepath"
+	"strings"
 	"sync"
+	"unicode"
 )
 
 type packageManager struct {
@@ -79,32 +83,147 @@ func countPackagesFromCommand(pm *packageManager) (int, error) {
 }
 
 func countNixPackages() (int, error) {
-	// Use nix profile list to count installed packages
-	out, err := exec.Command("nix", "profile", "list").Output()
+	profiles := []string{
+		"/nix/var/nix/profiles/default",
+		"/run/current-system",
+	}
+
+	if home, err := os.UserHomeDir(); err == nil {
+		profiles = append(profiles,
+			filepath.Join(home, ".nix-profile"),
+			filepath.Join(userStateDir(home), "nix", "profile"),
+		)
+	}
+
+	if user := os.Getenv("USER"); user != "" {
+		profiles = append(profiles, filepath.Join("/etc/profiles/per-user", user))
+	}
+
+	total := 0
+	found := false
+	seen := make(map[string]struct{})
+
+	for _, profile := range profiles {
+		resolved := profile
+		if realPath, err := filepath.EvalSymlinks(profile); err == nil {
+			resolved = realPath
+		}
+
+		if _, ok := seen[resolved]; ok {
+			continue
+		}
+		seen[resolved] = struct{}{}
+
+		count, ok, err := countNixProfilePackages(profile)
+		if err != nil {
+			return 0, err
+		}
+		if !ok {
+			continue
+		}
+
+		found = true
+		total += count
+	}
+
+	if !found {
+		return 0, errors.New("no nix profiles found")
+	}
+
+	return total, nil
+}
+
+func userStateDir(home string) string {
+	if stateHome := os.Getenv("XDG_STATE_HOME"); stateHome != "" {
+		return stateHome
+	}
+
+	return filepath.Join(home, ".local", "state")
+}
+
+func countNixProfilePackages(profile string) (int, bool, error) {
+	if info, err := os.Stat(profile); err != nil {
+		if errors.Is(err, os.ErrNotExist) {
+			return 0, false, nil
+		}
+		return 0, false, err
+	} else if !info.IsDir() {
+		return 0, false, nil
+	}
+
+	out, err := exec.Command("nix-store", "--query", "--requisites", profile).Output()
 	if err != nil {
-		return 0, err
+		return 0, false, err
 	}
 
-	// Count output lines (each line is a package)
-	count := bytes.Count(out, []byte{'\n'})
-
-	// If output doesn't end with newline, increment count
-	if len(out) > 0 && out[len(out)-1] != '\n' {
-		count++
+	count := 0
+	for _, line := range bytes.Split(out, []byte{'\n'}) {
+		if isValidNixPackagePath(string(line)) {
+			count++
+		}
 	}
 
-	// Subtract 1 if there's a header line or handle empty output
-	if count > 0 {
-		count--
+	return count, true, nil
+}
+
+func isValidNixPackagePath(path string) bool {
+	if path == "" {
+		return false
 	}
 
-	return count, nil
+	info, err := os.Stat(path)
+	if err != nil || !info.IsDir() {
+		return false
+	}
+
+	name := filepath.Base(path)
+	if strings.HasPrefix(name, "nixos-system-nixos-") ||
+		strings.HasSuffix(name, "-doc") ||
+		strings.HasSuffix(name, "-man") ||
+		strings.HasSuffix(name, "-info") ||
+		strings.HasSuffix(name, "-dev") ||
+		strings.HasSuffix(name, "-bin") {
+		return false
+	}
+
+	return containsVersion(name)
+}
+
+func containsVersion(name string) bool {
+	state := 0
+	for _, char := range name {
+		switch state {
+		case 0:
+			if unicode.IsDigit(char) {
+				state = 1
+			}
+		case 1:
+			if unicode.IsDigit(char) {
+				continue
+			}
+			if char == '.' {
+				state = 2
+			} else {
+				state = 0
+			}
+		case 2:
+			if unicode.IsDigit(char) {
+				state = 3
+			} else {
+				state = 0
+			}
+		case 3:
+			return true
+		}
+	}
+
+	return state == 3
 }
 
 func getPackageManager() *packageManager {
 	detectOnce.Do(func() {
 		// Check for NixOS first via /etc/os-release
-		if isNixOS() && exists("nix") {
+		if isNixOS() {
 			detected = &packageManagers[8] // nix package manager
 			return
 		}
