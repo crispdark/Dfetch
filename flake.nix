@@ -19,10 +19,7 @@
 
           vendorHash = null;
 
-          installPhase = ''
-            mkdir -p $out/bin
-            cp dfetch $out/bin/
-          '';
+          subPackages = [ "." ];
 
           meta = with pkgs.lib; {
             description = "A lightweight system information tool focused on clean output";
