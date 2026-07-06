@@ -1,17 +1,28 @@
 package modules
 
 import (
-	"os"
-	"strings"
+	"fmt"
+
+	"golang.org/x/sys/unix"
 )
 
 func Kernel() string {
-	file, err := os.ReadFile("/proc/sys/kernel/osrelease")
-	if err != nil {
+	var uts unix.Utsname
+
+	if err := unix.Uname(&uts); err != nil {
 		return "unknown"
 	}
 
-	kernel := strings.TrimSpace(string(file))
+	return fmt.Sprintf("%s %s",
+		charsToString(uts.Sysname[:]),
+		charsToString(uts.Release[:]),
+	)
+}
 
-	return kernel
+func charsToString(ca []byte) string {
+	n := 0
+	for n < len(ca) && ca[n] != 0 {
+		n++
+	}
+	return string(ca[:n])
 }
