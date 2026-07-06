@@ -13,7 +13,7 @@ func Uptime() string {
 	}
 
 	parts := strings.Fields(string(content))
-	if len(parts) < 1 {
+	if len(parts) == 0 {
 		return "unknown"
 	}
 
@@ -24,20 +24,27 @@ func Uptime() string {
 
 	total := int(secondsFloat)
 
-	days := total / 86400
+	weeks := total / 604800
+	days := (total % 604800) / 86400
 	hours := (total % 86400) / 3600
 	minutes := (total % 3600) / 60
 	seconds := total % 60
 
-	var result string
+	var result strings.Builder
 
-	if days > 0 {
-		result += strconv.Itoa(days) + "d "
+	if weeks > 0 {
+		result.WriteString(strconv.Itoa(weeks) + "w ")
 	}
 
-	result += strconv.Itoa(hours) + "h " +
-		strconv.Itoa(minutes) + "m " +
-		strconv.Itoa(seconds) + "s"
+	if days > 0 {
+		result.WriteString(strconv.Itoa(days) + "d ")
+	}
 
-	return result
+	result.WriteString(
+		strconv.Itoa(hours) + "h " +
+			strconv.Itoa(minutes) + "m " +
+			strconv.Itoa(seconds) + "s",
+	)
+
+	return result.String()
 }
