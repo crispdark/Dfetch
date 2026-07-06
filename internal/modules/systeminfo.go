@@ -7,7 +7,8 @@ type Modules struct {
 	CPU         string
 	Memory      string
 	Swap        string
-	Userinfo    string
+	Username    string
+	Hostname    string
 	Local_IP    string
 	Uptime      string
 	Battery     string
@@ -31,7 +32,7 @@ func CollectSystemInfo(enabledModules []string) Modules {
 		switch module {
 
 		case "userinfo":
-			sys.Userinfo = Userinfo()
+			sys.Username, sys.Hostname = Userinfo()
 
 		case "os":
 			continue

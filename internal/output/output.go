@@ -45,7 +45,7 @@ func BuildInfoLines(sys modules.Modules, cfg config.Config, distroName string) [
 	}
 
 	info := map[string]string{
-		"userinfo":  fmt.Sprintf("%s%s\x1b[0m", cfg.UserinfoColor, sys.Userinfo),
+		"userinfo":  fmt.Sprintf("%s%s%s@%s%s\x1b[0m", cfg.UserinfoColor, sys.Username, cfg.InfoColor, cfg.UserinfoColor, sys.Hostname),
 		"emptyline": "",
 	}
 

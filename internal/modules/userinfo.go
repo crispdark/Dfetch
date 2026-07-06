@@ -1,17 +1,16 @@
 package modules
 
 import (
-	"fmt"
 	"os"
 	"os/user"
 )
 
-func Userinfo() string {
+func Userinfo() (string, string) {
 
 	hostname := Hostname()
 	username := Username()
 
-	return fmt.Sprintf("%s@%s", username, hostname)
+	return username, hostname
 }
 
 func Hostname() string {
